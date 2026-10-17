@@ -1,0 +1,101 @@
+# Problem 7 Solution: A Line Relative to a Plane
+
+## 1. Original Problem
+For the line and plane in $\mathbb{R}^3$:
+$$L : (x, y, z) = (1, 1, 0) + t(1, -1, 0), \quad t \in \mathbb{R},$$
+$$\Pi : x + y + z = 2,$$
+determine whether the line intersects the plane at exactly one point, is parallel to it (with no common points), or lies entirely within it. Explain the geometric and algebraic role of the dot product between the line's direction vector and the plane's normal vector.
+
+---
+
+## 2. What We Are Trying to Find
+We need to:
+1. Extract the direction vector $v$ of the line and the normal vector $n$ of the plane.
+2. Evaluate the dot product $v \cdot n$.
+3. Interpret the condition $v \cdot n = 0$ geometrically.
+4. Test whether the base point $P_0$ of the line satisfies the plane equation.
+5. Conclude whether $L$ intersects at a point, is strictly parallel, or is contained in $\Pi$.
+
+---
+
+## 3. Key Concepts and Theorems
+1. **Geometric Relationship Between a Line and a Plane:**
+   A line $L : P_0 + t\,v$ and a plane $\Pi : n \cdot X = d$ can have three possible relationships in $\mathbb{R}^3$:
+   - **Transverse Intersection (One Point):** $v \cdot n \neq 0$. The line cuts through the plane at a single point.
+   - **Strictly Parallel (Disjoint):** $v \cdot n = 0$, and the base point $P_0 \notin \Pi$ ($n \cdot P_0 \neq d$). The line never meets the plane.
+   - **Line Contained in the Plane:** $v \cdot n = 0$, and the base point $P_0 \in \Pi$ ($n \cdot P_0 = d$). Every point on the line lies inside the plane ($L \subset \Pi$).
+2. **The Role of the Dot Product $v \cdot n$:**
+   The normal vector $n$ points directly out of the plane perpendicular to its surface. The dot product $v \cdot n = \|v\| \|n\| \cos \angle(v, n)$ measures how much the line penetrates along this perpendicular axis.
+   - If $v \cdot n \neq 0$, the parameter $t$ can be solved uniquely: $t = \frac{d - n \cdot P_0}{v \cdot n}$.
+   - If $v \cdot n = 0$, the line has zero velocity component perpendicular to the plane; it runs parallel to the planar surface.
+
+---
+
+## 4. Detailed Step-by-Step Solution
+
+### Step 1: Identify Direction Vector and Normal Vector
+- From the line $L : (x, y, z) = (1, 1, 0) + t(1, -1, 0)$:
+  - Base point: $P_0 = (1, 1, 0)$
+  - Direction vector: $v = (1, -1, 0)$
+- From the plane $\Pi : 1x + 1y + 1z = 2$:
+  - Normal vector: $n = (1, 1, 1)$
+
+### Step 2: Compute the Dot Product $v \cdot n$
+Evaluate the scalar product:
+$$v \cdot n = (1)(1) + (-1)(1) + (0)(1) = 1 - 1 + 0 = 0.$$
+
+### Step 3: Interpret $v \cdot n = 0$
+Because $v \cdot n = 0$, the direction vector of the line is orthogonal to the normal vector of the plane. Since the normal vector $n$ is perpendicular to the plane itself, any vector perpendicular to $n$ must be parallel to the plane.
+Thus, the line $L$ is **parallel to the plane $\Pi$**. It cannot intersect the plane at a single point.
+
+### Step 4: Test Whether the Line Lies in the Plane
+Substitute the line's base point $P_0 = (1, 1, 0)$ into the plane's equation $x + y + z = 2$:
+$$\text{LHS} = 1 + 1 + 0 = 2.$$
+$$\text{RHS} = 2.$$
+Since $\text{LHS} = \text{RHS}$, the base point $P_0(1, 1, 0)$ lies on the plane $\Pi$.
+
+### Step 5: Substitute General Parametric Point into the Plane Equation
+To see this algebraically for all $t$, substitute $(x(t), y(t), z(t)) = (1 + t, 1 - t, 0)$ directly into the plane equation:
+$$(1 + t) + (1 - t) + 0 = 2$$
+$$1 + 1 + (t - t) = 2 \implies 2 = 2.$$
+The parameter $t$ cancels out completely, leaving an identity ($2 = 2$) that is true for **every** real number $t \in \mathbb{R}$.
+Therefore, the line $L$ **lies entirely in the plane $\Pi$** ($L \subset \Pi$).
+
+---
+
+## 5. Why Each Step Is Valid
+1. **Checking $v \cdot n$ first** directly isolates the denominator in the algebraic solution for parameter $t$.
+2. **A denominator of zero ($v \cdot n = 0$)** means the linear equation in $t$ either has no solutions or infinitely many solutions.
+3. **Plugging $P_0$ into the plane** distinguishes between a line running parallel above the plane versus embedded inside the plane.
+
+---
+
+## 6. Final Answer in Words
+The dot product between the direction vector $v = (1, -1, 0)$ and the normal vector $n = (1, 1, 1)$ is $v \cdot n = 0$, which proves that the line is parallel to the plane. Testing the line's base point $P_0(1, 1, 0)$ in the plane equation gives $1 + 1 + 0 = 2$, showing that $P_0$ belongs to the plane. Consequently, the line does not merely parallel the plane at a distance; it lies entirely within the plane ($L \subset \Pi$).
+
+---
+
+## 7. Quick Verification
+- **Test another parameter value on the line:**
+  Let $t = 5$:
+  $$P_5 = (1 + 5, \; 1 - 5, \; 0) = (6, -4, 0).$$
+  Substitute $P_5$ into the plane equation:
+  $$x + y + z = 6 + (-4) + 0 = 2.$$
+  The point $(6, -4, 0)$ lies in the plane.
+- Let $t = -3$:
+  $$P_{-3} = (1 - 3, \; 1 - (-3), \; 0) = (-2, 4, 0).$$
+  $$x + y + z = -2 + 4 + 0 = 2.$$
+  Every point generated by the line satisfies the plane equation.
+
+---
+
+## 8. Common Mistakes to Avoid
+- **Stopping at $v \cdot n = 0$:** Concluding that the line is strictly parallel and never touches the plane without checking whether the base point lies in the plane.
+- **Thinking $v \cdot n = 0$ means the line is perpendicular to the plane:** The dot product is with the *normal* vector, not the plane. Perpendicular to the normal means parallel to the plane.
+- **Arithmetic sign in $v \cdot n$:** Writing $(-1)(1) = +1$, which would incorrectly give $v \cdot n = 2 \neq 0$.
+
+---
+
+## 9. Classroom Presentation (3-Sentence Summary)
+We take the dot product of the line's direction vector $(1, -1, 0)$ with the plane's normal vector $(1, 1, 1)$, which yields $1 - 1 + 0 = 0$, indicating that the line is parallel to the planar surface. Substituting the line's parametric coordinates $(1+t, 1-t, 0)$ into the plane equation $x+y+z=2$ results in the identity $2 = 2$ for all values of $t$. Because every point on the line satisfies the plane's equation, the line lies entirely inside the plane.
+
