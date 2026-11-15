@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matematik Ödevi Çözüm Durumu Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 24, 38, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(255, 255, 255, 0.12);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --success: #10b981;
+      --success-glow: rgba(16, 185, 129, 0.2);
+      --warning: #f59e0b;
+      --warning-glow: rgba(245, 158, 11, 0.2);
+      --danger: #ef4444;
+      --danger-glow: rgba(239, 68, 68, 0.2);
+      --accent: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+      background-attachment: fixed;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .header-title h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff 40%, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-title p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-live::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* KPI Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--card-hover);
+    }
+
+    .stat-card .stat-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .stat-card .stat-val {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .stat-card .stat-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .progress-bar-wrap {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      margin-top: 14px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #6366f1, #38bdf8);
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+      transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Filter Toolbar */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      background: rgba(18, 24, 38, 0.8);
+      border: 1px solid var(--card-border);
+      padding: 4px;
+      border-radius: 12px;
+    }
+
+    .filter-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-tab.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 2px 10px var(--primary-glow);
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: rgba(18, 24, 38, 0.8);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 10px 16px 10px 38px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Section Cards */
+    .section-block {
+      margin-bottom: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-pill {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 20px;
+    }
+
+    .topic-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all 0.2s;
+    }
+
+    .topic-card:hover {
+      border-color: var(--card-hover);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .topic-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .topic-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .topic-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .badge-done {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-partial {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .badge-empty {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.6s ease;
+    }
+
+    /* Problem Dots Grid */
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+
+    .problem-dot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 4px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      position: relative;
+    }
+
+    .problem-dot:hover {
+      transform: scale(1.06);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .problem-dot.solved {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: #34d399;
+    }
+
+    .problem-dot.solved:hover {
+      background: rgba(16, 185, 129, 0.25);
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    }
+
+    .problem-dot.unsolved {
+      background: rgba(239, 68, 68, 0.06);
+      border-color: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+    }
+
+    .problem-dot.unsolved:hover {
+      background: rgba(239, 68, 68, 0.15);
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.25);
+    }
+
+    /* Modal for preview */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .modal-box {
+      background: #111827;
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 680px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      max-height: 85vh;
+      animation: modalFade 0.2s ease-out;
+    }
+
+    @keyframes modalFade {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .modal-close:hover {
+      color: #fff;
+    }
+
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    .modal-info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .modal-info-row:last-child {
+      border-bottom: none;
+    }
+
+    .modal-info-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .modal-info-val {
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+    }
+
+    .btn-file-path {
+      display: block;
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      word-break: break-all;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 48px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="header-title">
+        <h1>
+          📐 Matematik Ödevi Çözüm Durumu
+          <span class="badge-live">Canlı İzleyici</span>
+        </h1>
+        <p>Basics of Mathematics Student Workbook 2026 - Problem Çözüm Takibi</p>
+      </div>
+      <div>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted);" id="last-updated">Yükleniyor...</span>
+      </div>
+    </header>
+
+    <!-- KPI Summary Cards -->
+    <div class="stats-grid">
+      <div class="stat-card" style="border-top: 3px solid #6366f1;">
+        <div class="stat-label">Toplam Soru Sayısı</div>
+        <div class="stat-val" id="stat-total">180</div>
+        <div class="stat-sub">12 Alt Konu × 15 Problem</div>
+      </div>
+
+      <div class="stat-card" style="border-top: 3px solid #10b981;">
+        <div class="stat-label">Tamamlanan Sorular</div>
+        <div class="stat-val" style="color: #34d399;" id="stat-solved">0</div>
+        <div class="stat-sub" id="stat-pct">Tamamlanma Oranı: %0.0</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="stat-bar" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <div class="stat-card" style="border-top: 3px solid #f59e0b;">
+        <div class="stat-label">Kalan Soru Sayısı</div>
+        <div class="stat-val" style="color: #fbbf24;" id="stat-remaining">0</div>
+        <div class="stat-sub" id="stat-rem-sub">Çözülmesi gereken sorular</div>
+      </div>
+
+      <div class="stat-card" style="border-top: 3px solid #38bdf8;">
+        <div class="stat-label">Bölüm Durumları</div>
+        <div class="stat-val" style="font-size: 1.25rem; flex-direction: column; align-items: flex-start; gap: 4px; margin-top: 4px;">
+          <div style="font-size: 0.85rem; display: flex; justify-content: space-between; width: 100%;">
+            <span>Cebir (Algebra):</span> <strong style="color: #34d399;" id="stat-alg">60/60 (%100)</strong>
+          </div>
+          <div style="font-size: 0.85rem; display: flex; justify-content: space-between; width: 100%;">
+            <span>Geometri (Geometry):</span> <strong style="color: #fbbf24;" id="stat-geo">38/45 (%84.4)</strong>
+          </div>
+          <div style="font-size: 0.85rem; display: flex; justify-content: space-between; width: 100%;">
+            <span>Analiz (Calculus):</span> <strong style="color: #f87171;" id="stat-calc">0/75 (%0)</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter and Search Toolbar -->
+    <div class="toolbar">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all" onclick="filterSections('all')">Tüm Bölümler</button>
+        <button class="filter-tab" data-filter="1_Algebra" onclick="filterSections('1_Algebra')">Cebir (Algebra)</button>
+        <button class="filter-tab" data-filter="2_Geometry" onclick="filterSections('2_Geometry')">Geometri (Geometry)</button>
+        <button class="filter-tab" data-filter="3_Calculus" onclick="filterSections('3_Calculus')">Analiz (Calculus)</button>
+        <button class="filter-tab" data-filter="remaining_only" onclick="filterSections('remaining_only')">Sadece Kalanlar ⏳</button>
+      </div>
+
+      <div class="search-box">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input type="text" id="searchInput" placeholder="Konu veya soru ara..." oninput="handleSearch()">
+      </div>
+    </div>
+
+    <!-- Content Sections Container -->
+    <div id="content-container"></div>
+
+    <footer>
+      Basics of Mathematics Student Workbook 2026 • Local Interaktif Çalışma Paneli
+    </footer>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-backdrop" id="problemModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalProblemTitle">Problem Detayı</h3>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-info-row">
+          <span class="modal-info-label">Durum:</span>
+          <span class="modal-info-val" id="modalProblemStatus"></span>
+        </div>
+        <div class="modal-info-row">
+          <span class="modal-info-label">Konu:</span>
+          <span class="modal-info-val" id="modalTopic"></span>
+        </div>
+        <div class="modal-info-row">
+          <span class="modal-info-label">Dosya:</span>
+          <span class="modal-info-val" id="modalFilename"></span>
+        </div>
+        <div class="modal-info-row">
+          <span class="modal-info-label">İçerik Boyutu:</span>
+          <span class="modal-info-val" id="modalSize"></span>
+        </div>
+        <div style="margin-top: 16px;">
+          <span class="modal-info-label">Dosya Yolu:</span>
+          <div class="btn-file-path" id="modalPath"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let globalData = null;
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    async function init() {
+      try {
+        const res = await fetch('data.json?v=' + Date.now());
+        globalData = await res.json();
+        updateStats();
+        render();
+        document.getElementById('last-updated').textContent = 'Son Güncelleme: ' + new Date().toLocaleTimeString('tr-TR');
+      } catch (err) {
+        console.error('Veri yüklenemedi:', err);
+      }
+    }
+
+    function updateStats() {
+      if (!globalData) return;
+      let total = 0;
+      let solved = 0;
+
+      let algSolved = 0, algTotal = 0;
+      let geoSolved = 0, geoTotal = 0;
+      let calcSolved = 0, calcTotal = 0;
+
+      for (const [secKey, sec] of Object.entries(globalData)) {
+        for (const topic of sec.topics) {
+          total += topic.total_count;
+          solved += topic.solved_count;
+
+          if (secKey === '1_Algebra') {
+            algTotal += topic.total_count;
+            algSolved += topic.solved_count;
+          } else if (secKey === '2_Geometry') {
+            geoTotal += topic.total_count;
+            geoSolved += topic.solved_count;
+          } else if (secKey === '3_Calculus') {
+            calcTotal += topic.total_count;
+            calcSolved += topic.solved_count;
+          }
+        }
+      }
+
+      const remaining = total - solved;
+      const pct = total > 0 ? ((solved / total) * 100).toFixed(1) : 0;
+
+      document.getElementById('stat-total').textContent = total;
+      document.getElementById('stat-solved').textContent = solved;
+      document.getElementById('stat-remaining').textContent = remaining;
+      document.getElementById('stat-pct').textContent = `Tamamlanma Oranı: %${pct}`;
+      document.getElementById('stat-bar').style.width = `${pct}%`;
+      document.getElementById('stat-rem-sub').textContent = `${total} sorudan ${remaining} soru kaldı`;
+
+      document.getElementById('stat-alg').textContent = `${algSolved}/${algTotal} (%${((algSolved/algTotal)*100).toFixed(0)})`;
+      document.getElementById('stat-geo').textContent = `${geoSolved}/${geoTotal} (%${((geoSolved/geoTotal)*100).toFixed(1)})`;
+      document.getElementById('stat-calc').textContent = `${calcSolved}/${calcTotal} (%${calcTotal ? ((calcSolved/calcTotal)*100).toFixed(0) : 0})`;
+    }
+
+    function render() {
+      const container = document.getElementById('content-container');
+      container.innerHTML = '';
+
+      if (!globalData) return;
+
+      for (const [secKey, sec] of Object.entries(globalData)) {
+        if (currentFilter !== 'all' && currentFilter !== 'remaining_only' && currentFilter !== secKey) {
+          continue;
+        }
+
+        // Filter topics by search query
+        let filteredTopics = sec.topics.filter(t => {
+          if (!searchQuery) return true;
+          const query = searchQuery.toLowerCase();
+          const matchTitle = t.title.toLowerCase().includes(query);
+          const matchProblem = t.problems.some(p => p.title.toLowerCase().includes(query) || p.file.toLowerCase().includes(query));
+          return matchTitle || matchProblem;
+        });
+
+        if (currentFilter === 'remaining_only') {
+          filteredTopics = filteredTopics.filter(t => t.solved_count < t.total_count);
+        }
+
+        if (filteredTopics.length === 0) continue;
+
+        const secBlock = document.createElement('div');
+        secBlock.className = 'section-block';
+
+        const totalSecSolved = filteredTopics.reduce((acc, t) => acc + t.solved_count, 0);
+        const totalSecProblems = filteredTopics.reduce((acc, t) => acc + t.total_count, 0);
+
+        secBlock.innerHTML = `
+          <div class="section-header">
+            <h2 class="section-title">
+              ${sec.name}
+              <span class="section-pill">${totalSecSolved} / ${totalSecProblems} Çözüldü</span>
+            </h2>
+          </div>
+          <div class="topics-grid" id="grid-${secKey}"></div>
+        `;
+
+        container.appendChild(secBlock);
+
+        const topicsGrid = secBlock.querySelector(`#grid-${secKey}`);
+
+        filteredTopics.forEach(topic => {
+          const isFull = topic.solved_count === topic.total_count;
+          const isEmpty = topic.solved_count === 0;
+          const pct = ((topic.solved_count / topic.total_count) * 100).toFixed(0);
+
+          let badgeClass = 'badge-partial';
+          let badgeText = `${topic.solved_count}/${topic.total_count} (%${pct})`;
+          let fillColor = '#f59e0b';
+
+          if (isFull) {
+            badgeClass = 'badge-done';
+            badgeText = `Tamamlandı (${topic.total_count}/${topic.total_count})`;
+            fillColor = '#10b981';
+          } else if (isEmpty) {
+            badgeClass = 'badge-empty';
+            badgeText = `Başlanmadı (0/${topic.total_count})`;
+            fillColor = '#ef4444';
+          }
+
+          const card = document.createElement('div');
+          card.className = 'topic-card';
+          card.innerHTML = `
+            <div class="topic-head">
+              <div class="topic-title">${topic.title}</div>
+              <span class="topic-badge ${badgeClass}">${badgeText}</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: ${pct}%; background: ${fillColor};"></div>
+            </div>
+            <div class="problems-grid" id="probs-${secKey}-${topic.id}"></div>
+          `;
+
+          topicsGrid.appendChild(card);
+
+          const probsGrid = card.querySelector(`#probs-${secKey}-${topic.id}`);
+          topic.problems.forEach(p => {
+            const dot = document.createElement('div');
+            dot.className = `problem-dot ${p.solved ? 'solved' : 'unsolved'}`;
+            dot.textContent = `P${p.num < 10 ? '0' + p.num : p.num}`;
+            dot.title = `${p.title} (${p.solved ? 'Çözüldü' : 'Kaldı'})`;
+            dot.onclick = () => openModal(topic.title, p);
+            probsGrid.appendChild(dot);
+          });
+        });
+      }
+    }
+
+    function filterSections(type) {
+      currentFilter = type;
+      document.querySelectorAll('.filter-tab').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-filter') === type);
+      });
+      render();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById('searchInput').value.trim();
+      render();
+    }
+
+    function openModal(topicTitle, problem) {
+      document.getElementById('modalProblemTitle').textContent = problem.title || `Problem ${problem.num}`;
+      const statusEl = document.getElementById('modalProblemStatus');
+      if (problem.solved) {
+        statusEl.innerHTML = '<span style="color: #34d399; font-weight: 700;">✅ Çözüldü (Tamamlandı)</span>';
+      } else {
+        statusEl.innerHTML = '<span style="color: #f87171; font-weight: 700;">⏳ Çözülmedi (Kalan Soru)</span>';
+      }
+      document.getElementById('modalTopic').textContent = topicTitle;
+      document.getElementById('modalFilename').textContent = problem.file;
+      document.getElementById('modalSize').textContent = problem.chars > 0 ? `${problem.chars} karakter` : 'Boş dosya (0 B)';
+      document.getElementById('modalPath').textContent = problem.path;
+
+      document.getElementById('problemModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('problemModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('problemModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

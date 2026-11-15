@@ -1,0 +1,1553 @@
+{
+  "1_Algebra": {
+    "name": "Algebra (Cebir)",
+    "topics": [
+      {
+        "id": "01_matrices_and_operations",
+        "title": "01 Matrices And Operations",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_01_solution.md",
+            "title": "Exercise 1: Matrix Size and Entries",
+            "solved": true,
+            "chars": 6308
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_02_solution.md",
+            "title": "Exercise 2: Addition and Scalar Multiplication",
+            "solved": true,
+            "chars": 5802
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_03_solution.md",
+            "title": "Exercise 3: When Can Matrices Be Multiplied?",
+            "solved": true,
+            "chars": 6583
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_04_solution.md",
+            "title": "Exercise 4: Matrix Multiplication and Noncommutativity",
+            "solved": true,
+            "chars": 6505
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_05_solution.md",
+            "title": "Exercise 5: Matrix Times Vector",
+            "solved": true,
+            "chars": 5646
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_06_solution.md",
+            "title": "Exercise 6: Transpose",
+            "solved": true,
+            "chars": 6318
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_07_solution.md",
+            "title": "Exercise 7: Identity Matrix, Zero Matrix, and Powers",
+            "solved": true,
+            "chars": 7734
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_08_solution.md",
+            "title": "Exercise 8: Row Operations and Their Reversibility",
+            "solved": true,
+            "chars": 6564
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_09_solution.md",
+            "title": "Exercise 9: Composing Transformations",
+            "solved": true,
+            "chars": 7374
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_10_solution.md",
+            "title": "Exercise 10: Columns of a Matrix Product",
+            "solved": true,
+            "chars": 7510
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_11_solution.md",
+            "title": "Exercise 11: When Do Matrices Commute?",
+            "solved": true,
+            "chars": 6393
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_12_solution.md",
+            "title": "Exercise 12: Formula for a Matrix Power",
+            "solved": true,
+            "chars": 7005
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_13_solution.md",
+            "title": "Exercise 13: A Recurrence Written in Matrix Form",
+            "solved": true,
+            "chars": 8438
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_14_solution.md",
+            "title": "Exercise 14: Rotation Matrices",
+            "solved": true,
+            "chars": 8055
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/1_Algebra/01_matrices_and_operations/problem_15_solution.md",
+            "title": "Exercise 15: Associativity of Multiplication and Different Calculation Paths",
+            "solved": true,
+            "chars": 9487
+          }
+        ]
+      },
+      {
+        "id": "02_determinants",
+        "title": "02 Determinants",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_01_solution.md",
+            "title": "Exercise 1: Determinant of a 2×2 Matrix",
+            "solved": true,
+            "chars": 4532
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_02_solution.md",
+            "title": "Exercise 2: Determinant of a 3×3 Matrix",
+            "solved": true,
+            "chars": 4929
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_03_solution.md",
+            "title": "Exercise 3: Swapping Two Rows",
+            "solved": true,
+            "chars": 4923
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_04_solution.md",
+            "title": "Exercise 4: Triangular Matrix",
+            "solved": true,
+            "chars": 5044
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_05_solution.md",
+            "title": "Exercise 5: Row Operations and Determinants",
+            "solved": true,
+            "chars": 5635
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_06_solution.md",
+            "title": "Exercise 6: Parameter and Invertibility",
+            "solved": true,
+            "chars": 4891
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_07_solution.md",
+            "title": "Exercise 7: Using Properties Instead of Recomputing",
+            "solved": true,
+            "chars": 5197
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_08_solution.md",
+            "title": "Exercise 8: Determinant of a Product",
+            "solved": true,
+            "chars": 5018
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_09_solution.md",
+            "title": "Exercise 9: Area and the Determinant",
+            "solved": true,
+            "chars": 5743
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_10_solution.md",
+            "title": "Exercise 10: Detecting Dependence",
+            "solved": true,
+            "chars": 5756
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_11_solution.md",
+            "title": "Exercise 11: Shortening the Calculation with Row Operations",
+            "solved": true,
+            "chars": 5319
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_12_solution.md",
+            "title": "Exercise 12: A Parameter Revealed by a Row Operation",
+            "solved": true,
+            "chars": 5674
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_13_solution.md",
+            "title": "Exercise 13: Determinant by Elimination",
+            "solved": true,
+            "chars": 5533
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_14_solution.md",
+            "title": "Exercise 14: A System of Equations and the Determinant",
+            "solved": true,
+            "chars": 6881
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/1_Algebra/02_determinants/problem_15_solution.md",
+            "title": "Exercise 15: Combining Determinant Properties",
+            "solved": true,
+            "chars": 6818
+          }
+        ]
+      },
+      {
+        "id": "03_matrix_inversion",
+        "title": "03 Matrix Inversion",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_01_solution.md",
+            "title": "Exercise 1: Definition of the Inverse",
+            "solved": true,
+            "chars": 4611
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_02_solution.md",
+            "title": "Exercise 2: Formula for a 2×2 Matrix",
+            "solved": true,
+            "chars": 4938
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_03_solution.md",
+            "title": "Exercise 3: When Does the Inverse Not Exist?",
+            "solved": true,
+            "chars": 5647
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_04_solution.md",
+            "title": "Exercise 4: Gauss–Jordan Elimination for Matrix Inversion",
+            "solved": true,
+            "chars": 6291
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_05_solution.md",
+            "title": "Exercise 5: Inverting a 3×3 Matrix via Gauss–Jordan Elimination",
+            "solved": true,
+            "chars": 7241
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_06_solution.md",
+            "title": "Exercise 6: Solving a System Using the Inverse",
+            "solved": true,
+            "chars": 5270
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_07_solution.md",
+            "title": "Exercise 7: Inverse of a Product",
+            "solved": true,
+            "chars": 6497
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_08_solution.md",
+            "title": "Exercise 8: Inverse of a Transformation",
+            "solved": true,
+            "chars": 6450
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_09_solution.md",
+            "title": "Exercise 9: Matrix Equation",
+            "solved": true,
+            "chars": 5862
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_10_solution.md",
+            "title": "Exercise 10: Inverse of a Diagonal Matrix",
+            "solved": true,
+            "chars": 6292
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_11_solution.md",
+            "title": "Exercise 11: Parameter and Invertibility",
+            "solved": true,
+            "chars": 6165
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_12_solution.md",
+            "title": "Exercise 12: Finding Inverses Without Starting from Scratch",
+            "solved": true,
+            "chars": 6442
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_13_solution.md",
+            "title": "Exercise 13: Undoing a Composite Transformation",
+            "solved": true,
+            "chars": 7637
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_14_solution.md",
+            "title": "Exercise 14: A Matrix That Is Its Own Inverse (Involutory Matrix)",
+            "solved": true,
+            "chars": 6221
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/1_Algebra/03_matrix_inversion/problem_15_solution.md",
+            "title": "Exercise 15: Two Methods for Solving the Same System",
+            "solved": true,
+            "chars": 6977
+          }
+        ]
+      },
+      {
+        "id": "04_systems_of_equations",
+        "title": "04 Systems Of Equations",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_01_solution.md",
+            "title": "Exercise 1: From a System to a Matrix",
+            "solved": true,
+            "chars": 6383
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_02_solution.md",
+            "title": "Exercise 2: Gaussian Elimination — One Solution",
+            "solved": true,
+            "chars": 5803
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_03_solution.md",
+            "title": "Exercise 3: Inconsistent System",
+            "solved": true,
+            "chars": 6132
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_04_solution.md",
+            "title": "Exercise 4: Infinitely Many Solutions",
+            "solved": true,
+            "chars": 6742
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_05_solution.md",
+            "title": "Exercise 5: Row Echelon Form and Number of Solutions",
+            "solved": true,
+            "chars": 6214
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_06_solution.md",
+            "title": "Exercise 6: A System with a Parameter — Which Cases Actually Occur?",
+            "solved": true,
+            "chars": 6935
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_07_solution.md",
+            "title": "Exercise 7: Choosing a Method Deliberately",
+            "solved": true,
+            "chars": 7694
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_08_solution.md",
+            "title": "Exercise 8: Two Systems with the Same Coefficient Matrix",
+            "solved": true,
+            "chars": 6685
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_09_solution.md",
+            "title": "Exercise 9: A System from a Sum Condition",
+            "solved": true,
+            "chars": 5398
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_10_solution.md",
+            "title": "Exercise 10: A Polynomial Through Three Points",
+            "solved": true,
+            "chars": 5444
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_11_solution.md",
+            "title": "Exercise 11: A Parameter in a System of Three Equations",
+            "solved": true,
+            "chars": 6861
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_12_solution.md",
+            "title": "Exercise 12: Homogeneous System",
+            "solved": true,
+            "chars": 7336
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_13_solution.md",
+            "title": "Exercise 13: Does Every Equation Add New Information?",
+            "solved": true,
+            "chars": 6514
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_14_solution.md",
+            "title": "Exercise 14: A Small Change in the Right-Hand Side",
+            "solved": true,
+            "chars": 7698
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/1_Algebra/04_systems_of_equations/problem_15_solution.md",
+            "title": "Exercise 15: Classifying Three Systems",
+            "solved": true,
+            "chars": 7387
+          }
+        ]
+      }
+    ]
+  },
+  "2_Geometry": {
+    "name": "Geometry (Geometri)",
+    "topics": [
+      {
+        "id": "01_vectors",
+        "title": "01 Vectors",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_01_solution.md",
+            "title": "Problem 1 Solution: Vector Operations and Their Meaning",
+            "solved": true,
+            "chars": 5865
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_02_solution.md",
+            "title": "Problem 2 Solution: Distance as the Length of a Vector",
+            "solved": true,
+            "chars": 5664
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_03_solution.md",
+            "title": "Problem 3 Solution: Vector Normalization",
+            "solved": true,
+            "chars": 5948
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_04_solution.md",
+            "title": "Problem 4 Solution: Dot Product and Perpendicularity",
+            "solved": true,
+            "chars": 4976
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_05_solution.md",
+            "title": "Problem 5 Solution: Angle Between Vectors",
+            "solved": true,
+            "chars": 5484
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_06_solution.md",
+            "title": "Problem 6 Solution: Projection and Perpendicular Component",
+            "solved": true,
+            "chars": 5884
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_07_solution.md",
+            "title": "Problem 7 Solution: Linear Dependence Without Heavy Computation",
+            "solved": true,
+            "chars": 5913
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_08_solution.md",
+            "title": "Problem 8 Solution: Linear Combination and Checking the Result",
+            "solved": true,
+            "chars": 6169
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_09_solution.md",
+            "title": "Problem 9 Solution: Cross Product as a Perpendicular Direction",
+            "solved": true,
+            "chars": 6501
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_10_solution.md",
+            "title": "Problem 10 Solution: Triangle Area from Vectors",
+            "solved": true,
+            "chars": 7327
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_11_solution.md",
+            "title": "Problem 11 Solution: Decomposition into Parallel and Perpendicular Components",
+            "solved": true,
+            "chars": 6983
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_12_solution.md",
+            "title": "Problem 12 Solution: A Normal Vector to a Plane",
+            "solved": true,
+            "chars": 5551
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_13_solution.md",
+            "title": "Problem 13 Solution: Do Four Points Lie in One Plane?",
+            "solved": true,
+            "chars": 7445
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_14_solution.md",
+            "title": "Problem 14 Solution: Closest Point on a Line",
+            "solved": true,
+            "chars": 6289
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/2_Geometry/01_vectors/problem_15_solution.md",
+            "title": "Problem 15 Solution: Comparing Directions Using the Cosine of the Angle",
+            "solved": true,
+            "chars": 7048
+          }
+        ]
+      },
+      {
+        "id": "02_lines_and_planes",
+        "title": "02 Lines And Planes",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_01_solution.md",
+            "title": "Problem 1 Solution: Line Through Two Points",
+            "solved": true,
+            "chars": 5408
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_02_solution.md",
+            "title": "Problem 2 Solution: A Line in Space",
+            "solved": true,
+            "chars": 5268
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_03_solution.md",
+            "title": "Problem 3 Solution: Plane Through a Point with a Given Normal Vector",
+            "solved": true,
+            "chars": 5563
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_04_solution.md",
+            "title": "Problem 4 Solution: Plane Through Three Points",
+            "solved": true,
+            "chars": 5794
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_05_solution.md",
+            "title": "Problem 5 Solution: Relative Position of Two Lines",
+            "solved": true,
+            "chars": 6289
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_06_solution.md",
+            "title": "Problem 6 Solution: Angle Between Planes",
+            "solved": true,
+            "chars": 6985
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_07_solution.md",
+            "title": "Problem 7 Solution: A Line Relative to a Plane",
+            "solved": true,
+            "chars": 5987
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_08_solution.md",
+            "title": "Problem 8 Solution: Intersection Point of a Line and a Plane",
+            "solved": true,
+            "chars": 5330
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_09_solution.md",
+            "title": "Problem 9 Solution: Distances to a Line and a Plane",
+            "solved": true,
+            "chars": 7123
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_10_solution.md",
+            "title": "Problem 10 Solution: Projection of a Point onto a Plane and Reflection",
+            "solved": true,
+            "chars": 6179
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_11_solution.md",
+            "title": "Problem 11 Solution: Plane Containing a Line and a Point",
+            "solved": true,
+            "chars": 6336
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_12_solution.md",
+            "title": "Problem 12 Solution: Intersection Line of Two Planes",
+            "solved": true,
+            "chars": 6734
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_13_solution.md",
+            "title": "Problem 13 Solution: Closest Point on a Plane",
+            "solved": true,
+            "chars": 6235
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_14_solution.md",
+            "title": "Problem 14 Solution: Contrast: Intersection and Parallelism",
+            "solved": true,
+            "chars": 6941
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/2_Geometry/02_lines_and_planes/problem_15_solution.md",
+            "title": "Problem 15 Solution: Complete Classification of a Line Relative to a Plane",
+            "solved": true,
+            "chars": 8436
+          }
+        ]
+      },
+      {
+        "id": "03_second_degree_curves_and_surfaces",
+        "title": "03 Second Degree Curves And Surfaces",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_01_solution.md",
+            "title": "Problem 1 Solution: Recognizing Curves from Canonical Form",
+            "solved": true,
+            "chars": 7995
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_02_solution.md",
+            "title": "Problem 2 Solution: Circle by Completing the Square",
+            "solved": true,
+            "chars": 5705
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_03_solution.md",
+            "title": "Problem 3 Solution: Ellipse Semiaxes and Stretched Orientation",
+            "solved": true,
+            "chars": 6793
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_04_solution.md",
+            "title": "Problem 4 Solution: Parabola Features and Sketching",
+            "solved": true,
+            "chars": 6354
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_05_solution.md",
+            "title": "Problem 5 Solution: Hyperbola and Asymptotes",
+            "solved": true,
+            "chars": 7807
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_06_solution.md",
+            "title": "Problem 6 Solution: Shifted Ellipse by Completing the Square",
+            "solved": true,
+            "chars": 6426
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_07_solution.md",
+            "title": "Problem 7 Solution: Classifying a Second-Degree Equation",
+            "solved": true,
+            "chars": 6753
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_08_solution.md",
+            "title": "Problem 8 Solution: Sphere by Completing the Square",
+            "solved": true,
+            "chars": 6084
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_09_solution.md",
+            "title": "Problem 9 Solution: Ellipsoid and Its Cross-Sections",
+            "solved": true,
+            "chars": 6933
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_10_solution.md",
+            "title": "Problem 10 Solution: Paraboloids",
+            "solved": true,
+            "chars": 8119
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_11_solution.md",
+            "title": "Problem 11 Solution: Two Similar Surfaces (Hyperboloids of One and Two Sheets)",
+            "solved": true,
+            "chars": 8198
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_12_solution.md",
+            "title": "Problem 12 Solution: Recognizing a Surface from Cross-Sections",
+            "solved": true,
+            "chars": 7933
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_13_solution.md",
+            "title": "Problem 13 Solution: Intersection of a Sphere and a Plane",
+            "solved": true,
+            "chars": 6888
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_14_solution.md",
+            "title": "Problem 14 Solution: Cone and Cylinder",
+            "solved": true,
+            "chars": 8425
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/2_Geometry/03_second_degree_curves_and_surfaces/problem_15_solution.md",
+            "title": "Problem 15 Solution: Recognition and Sketch Without a Given Name",
+            "solved": true,
+            "chars": 9116
+          }
+        ]
+      }
+    ]
+  },
+  "3_Calculus": {
+    "name": "Calculus (Analiz)",
+    "topics": [
+      {
+        "id": "01_limits",
+        "title": "01 Limits",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_01_solution.md",
+            "title": "Problem 1 Solution: Dominant Terms in a Sequence",
+            "solved": true,
+            "chars": 5624
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_02_solution.md",
+            "title": "Problem 2 Solution: Different Growth Rates",
+            "solved": true,
+            "chars": 6540
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_03_solution.md",
+            "title": "Problem 3 Solution: A Square Root and Removing an Indeterminate Form",
+            "solved": true,
+            "chars": 6795
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_04_solution.md",
+            "title": "Problem 4 Solution: Powers and Oscillation",
+            "solved": true,
+            "chars": 7786
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_05_solution.md",
+            "title": "Problem 5 Solution: The Classical Limit Leading to the Number e",
+            "solved": true,
+            "chars": 8201
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_06_solution.md",
+            "title": "Problem 6 Solution: From a Sequence to a Function — Limit at Infinity",
+            "solved": true,
+            "chars": 7536
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_07_solution.md",
+            "title": "Problem 7 Solution: Limit at a Point and Canceling a Factor",
+            "solved": true,
+            "chars": 6889
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_08_solution.md",
+            "title": "Problem 8 Solution: A Square Root in a Function Limit",
+            "solved": true,
+            "chars": 6863
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_09_solution.md",
+            "title": "Problem 9 Solution: One-Sided Limits and an Asymptote",
+            "solved": true,
+            "chars": 6906
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_10_solution.md",
+            "title": "Problem 10 Solution: Continuity of a Piecewise Function",
+            "solved": true,
+            "chars": 5786
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_11_solution.md",
+            "title": "Problem 11 Solution: An n-th Root Limit and Exponential Dominance",
+            "solved": true,
+            "chars": 6982
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_12_solution.md",
+            "title": "Problem 12 Solution: Exponential Function Limit Related to e",
+            "solved": true,
+            "chars": 6038
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_13_solution.md",
+            "title": "Problem 13 Solution: Fundamental Trigonometric Limit",
+            "solved": true,
+            "chars": 6738
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_14_solution.md",
+            "title": "Problem 14 Solution: A 0/0 Limit with Trigonometry",
+            "solved": true,
+            "chars": 6260
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/3_Calculus/01_limits/problem_15_solution.md",
+            "title": "Problem 15 Solution: Observation Versus Proof in Limits",
+            "solved": true,
+            "chars": 9745
+          }
+        ]
+      },
+      {
+        "id": "02_derivatives",
+        "title": "02 Derivatives",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_01_solution.md",
+            "title": "Problem 1 Solution: Derivative of a Polynomial and the Slope of a Tangent Line",
+            "solved": true,
+            "chars": 5775
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_02_solution.md",
+            "title": "Problem 2 Solution: Powers, Roots, and the Domain",
+            "solved": true,
+            "chars": 7043
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_03_solution.md",
+            "title": "Problem 3 Solution: The Product Rule — Why Is It Needed?",
+            "solved": true,
+            "chars": 6358
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_04_solution.md",
+            "title": "Problem 4 Solution: A Quotient and Domain Control",
+            "solved": true,
+            "chars": 6360
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_05_solution.md",
+            "title": "Problem 5 Solution: The Chain Rule as Working Through Layers",
+            "solved": true,
+            "chars": 6749
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_06_solution.md",
+            "title": "Problem 6 Solution: Product Rule and Trigonometry",
+            "solved": true,
+            "chars": 5810
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_07_solution.md",
+            "title": "Problem 7 Solution: A Trigonometric Composition",
+            "solved": true,
+            "chars": 5584
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_08_solution.md",
+            "title": "Problem 8 Solution: Two Exponential Functions",
+            "solved": true,
+            "chars": 6611
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_09_solution.md",
+            "title": "Problem 9 Solution: A Logarithm and the Chain Rule",
+            "solved": true,
+            "chars": 7327
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_10_solution.md",
+            "title": "Problem 10 Solution: The Tangent Line as an Application of the Derivative",
+            "solved": true,
+            "chars": 5327
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_11_solution.md",
+            "title": "Problem 11 Solution: Derivative from the Definition",
+            "solved": true,
+            "chars": 6133
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_12_solution.md",
+            "title": "Problem 12 Solution: Several Rules at Once",
+            "solved": true,
+            "chars": 5987
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_13_solution.md",
+            "title": "Problem 13 Solution: A Multi-Layer Composition",
+            "solved": true,
+            "chars": 7540
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_14_solution.md",
+            "title": "Problem 14 Solution: Continuity and Differentiability of a Piecewise Function",
+            "solved": true,
+            "chars": 8858
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/3_Calculus/02_derivatives/problem_15_solution.md",
+            "title": "Problem 15 Solution: The Difference Quotient as a Check of the Derivative",
+            "solved": true,
+            "chars": 8742
+          }
+        ]
+      },
+      {
+        "id": "03_function_analysis",
+        "title": "03 Function Analysis",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_01_solution.md",
+            "title": "Problem 1 Solution: A Cubic Polynomial",
+            "solved": true,
+            "chars": 6743
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_02_solution.md",
+            "title": "Problem 2 Solution: A Parabola from the Perspective of the Derivative",
+            "solved": true,
+            "chars": 7064
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_03_solution.md",
+            "title": "Problem 3 Solution: A Rational Function",
+            "solved": true,
+            "chars": 8067
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_04_solution.md",
+            "title": "Problem 4 Solution: A Function with Two Vertical Asymptotes",
+            "solved": true,
+            "chars": 9657
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_05_solution.md",
+            "title": "Problem 5 Solution: An Exponential Function with a Maximum",
+            "solved": true,
+            "chars": 8878
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_06_solution.md",
+            "title": "Problem 06: Analysis of a Logarithmic Function",
+            "solved": true,
+            "chars": 6512
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_07_solution.md",
+            "title": "Problem 07: Analysis of a Trigonometric Function on a Bounded Interval",
+            "solved": true,
+            "chars": 7971
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_08_solution.md",
+            "title": "Problem 08: Second Derivative, Extrema, and Curvature Analysis",
+            "solved": true,
+            "chars": 7557
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_09_solution.md",
+            "title": "Problem 09: Oblique and Vertical Asymptotes via Polynomial Division",
+            "solved": true,
+            "chars": 7059
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_10_solution.md",
+            "title": "Problem 10: Complete Function Analysis of a Rational Function",
+            "solved": true,
+            "chars": 9099
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_11_solution.md",
+            "title": "Problem 11: Parameter Study and Bifurcation of Critical Points",
+            "solved": true,
+            "chars": 7955
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_12_solution.md",
+            "title": "Problem 12: Function with an Absolute Value and Non-Differentiable Points",
+            "solved": true,
+            "chars": 8373
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_13_solution.md",
+            "title": "Problem 13: Analysis of the Function $f(x) = \\frac{\\ln x}{x}$",
+            "solved": true,
+            "chars": 8680
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_14_solution.md",
+            "title": "Problem 14: Reconstructing Function Behavior from its Derivative",
+            "solved": true,
+            "chars": 8073
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/3_Calculus/03_function_analysis/problem_15_solution.md",
+            "title": "Problem 15: Error Diagnosis in Monotonicity and Extrema Analysis",
+            "solved": true,
+            "chars": 8353
+          }
+        ]
+      },
+      {
+        "id": "04_integrals",
+        "title": "04 Integrals",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_01_solution.md",
+            "title": "Problem 01: Antiderivative, Family of Solutions, and Verification",
+            "solved": true,
+            "chars": 6055
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_02_solution.md",
+            "title": "Problem 02: Integration of Powers, Roots, and Domain Considerations",
+            "solved": true,
+            "chars": 6522
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_03_solution.md",
+            "title": "Problem 03: Recognizing Basic Antiderivatives",
+            "solved": true,
+            "chars": 4763
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_04_solution.md",
+            "title": "Problem 04: Integration by Substitution as Reversing the Chain Rule",
+            "solved": true,
+            "chars": 5301
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_05_solution.md",
+            "title": "Problem 05: Structural Recognition of Substitution across Contexts",
+            "solved": true,
+            "chars": 5611
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_06_solution.md",
+            "title": "Problem 06: Logarithmic Integrals and the $\\frac{g'(x)}{g(x)}$ Structure",
+            "solved": true,
+            "chars": 5980
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_07_solution.md",
+            "title": "Problem 07: Integration by Parts as Reversing the Product Rule",
+            "solved": true,
+            "chars": 6173
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_08_solution.md",
+            "title": "Problem 08: Strategic Selection of Factors in Integration by Parts",
+            "solved": true,
+            "chars": 5995
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_09_solution.md",
+            "title": "Problem 09: Definite Integrals and Signed vs. Geometric Area",
+            "solved": true,
+            "chars": 6893
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_10_solution.md",
+            "title": "Problem 10: Bounding, Estimation, and Exact Calculation of a Definite Integral",
+            "solved": true,
+            "chars": 6561
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_11_solution.md",
+            "title": "Problem 11: Strategic Method Selection and Evaluation",
+            "solved": true,
+            "chars": 7208
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_12_solution.md",
+            "title": "Problem 12: Symmetry, Parity, and Absolute Value in Definite Integrals",
+            "solved": true,
+            "chars": 7590
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_13_solution.md",
+            "title": "Problem 13: The Accumulation Function and the Fundamental Theorem of Calculus",
+            "solved": true,
+            "chars": 7508
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_14_solution.md",
+            "title": "Problem 14: Integration of a Piecewise-Defined Function and Geometric Verification",
+            "solved": true,
+            "chars": 7246
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/3_Calculus/04_integrals/problem_15_solution.md",
+            "title": "Problem 15: Initial Value Problem and Recovering a Function",
+            "solved": true,
+            "chars": 5938
+          }
+        ]
+      },
+      {
+        "id": "05_applications",
+        "title": "05 Applications",
+        "solved_count": 15,
+        "total_count": 15,
+        "problems": [
+          {
+            "num": 1,
+            "file": "problem_01_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_01_solution.md",
+            "title": "Problem 01: Kinematics — Position, Velocity, Acceleration, and Direction of Motion",
+            "solved": true,
+            "chars": 5554
+          },
+          {
+            "num": 2,
+            "file": "problem_02_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_02_solution.md",
+            "title": "Problem 02: Geometric Optimization — Maximizing Rectangular Area",
+            "solved": true,
+            "chars": 6221
+          },
+          {
+            "num": 3,
+            "file": "problem_03_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_03_solution.md",
+            "title": "Problem 03: Geometric Optimization — Maximum Volume of an Open Box",
+            "solved": true,
+            "chars": 7361
+          },
+          {
+            "num": 4,
+            "file": "problem_04_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_04_solution.md",
+            "title": "Problem 04: Area Between Intersecting Curves",
+            "solved": true,
+            "chars": 5788
+          },
+          {
+            "num": 5,
+            "file": "problem_05_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_05_solution.md",
+            "title": "Problem 05: Accumulation of Distance from Velocity — Displacement vs. Total Distance",
+            "solved": true,
+            "chars": 7612
+          },
+          {
+            "num": 6,
+            "file": "problem_06_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_06_solution.md",
+            "title": "Problem 06: Average Value of a Function and the Mean Value Theorem for Integrals",
+            "solved": true,
+            "chars": 6807
+          },
+          {
+            "num": 7,
+            "file": "problem_07_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_07_solution.md",
+            "title": "Problem 07: Exponential Growth Dynamics, Differential Relations, and Doubling Time",
+            "solved": true,
+            "chars": 6773
+          },
+          {
+            "num": 8,
+            "file": "problem_08_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_08_solution.md",
+            "title": "Problem 08: Server Traffic Modeling — Accumulation of Requests and Average Rate",
+            "solved": true,
+            "chars": 6477
+          },
+          {
+            "num": 9,
+            "file": "problem_09_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_09_solution.md",
+            "title": "Problem 09: Constrained Optimization — Minimizing Surface Area of a Can",
+            "solved": true,
+            "chars": 8342
+          },
+          {
+            "num": 10,
+            "file": "problem_10_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_10_solution.md",
+            "title": "Problem 10: Routing Optimization — Laying Cable Through Water and Land",
+            "solved": true,
+            "chars": 9645
+          },
+          {
+            "num": 11,
+            "file": "problem_11_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_11_solution.md",
+            "title": "Problem 11: Volume of a Solid of Revolution via the Disk Method",
+            "solved": true,
+            "chars": 6291
+          },
+          {
+            "num": 12,
+            "file": "problem_12_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_12_solution.md",
+            "title": "Problem 12: Comprehensive Optimization Model and Verification — Museum Exhibition Room",
+            "solved": true,
+            "chars": 12107
+          },
+          {
+            "num": 13,
+            "file": "problem_13_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_13_solution.md",
+            "title": "Problem 13: Physical Applications — Work Done by a Variable Force (Hooke's Law)",
+            "solved": true,
+            "chars": 7709
+          },
+          {
+            "num": 14,
+            "file": "problem_14_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_14_solution.md",
+            "title": "Problem 14: Center of Mass (Centroid) of a Planar Lamina",
+            "solved": true,
+            "chars": 8952
+          },
+          {
+            "num": 15,
+            "file": "problem_15_solution.md",
+            "path": "solutions/3_Calculus/05_applications/problem_15_solution.md",
+            "title": "Problem 15: Economic Optimization — Consumer Surplus, Producer Surplus, and Market Equilibrium",
+            "solved": true,
+            "chars": 9207
+          }
+        ]
+      }
+    ]
+  }
+}
