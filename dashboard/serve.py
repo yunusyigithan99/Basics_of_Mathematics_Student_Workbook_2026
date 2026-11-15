@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""
+Basics of Mathematics Student Workbook 2026 - Interactive Presentation & Evaluation Server
+Lightweight local HTTP server for workbook review, evaluation, and presentation.
+"""
+
 import http.server
 import socketserver
 import os
@@ -7,66 +12,105 @@ import re
 
 PORT = 3333
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(DIRECTORY)
+SOLUTIONS_DIR = os.path.join(BASE_DIR, 'solutions')
+EXERCISES_DIR = os.path.join(BASE_DIR, 'exercises')
 
 def regenerate_data():
-    base_sol = os.path.join(DIRECTORY, '..', 'solutions')
-    sections = {
+    """Generates a complete dataset including exercises, solutions, and parsed sections."""
+    exercises_cache = {}
+    if os.path.isdir(EXERCISES_DIR):
+        for root, dirs, files in os.walk(EXERCISES_DIR):
+            for f in sorted(files):
+                if f.endswith('_en.md'):
+                    parts = os.path.relpath(root, EXERCISES_DIR).split(os.sep)
+                    sec = parts[0]
+                    top_key = f.replace('_en.md', '')
+                    key = f'{sec}/{top_key}'
+                    with open(os.path.join(root, f), 'r', encoding='utf-8') as fp:
+                        txt = fp.read()
+                    matches = re.findall(
+                        r'###\s+(?:Problem|Exercise)\s+(\d+)\.?(.*?)(?=(?:###\s+(?:Problem|Exercise)\s+\d+|\Z))',
+                        txt, re.DOTALL
+                    )
+                    exercises_cache[key] = {int(m[0]): m[1].strip() for m in matches}
+
+    sections_def = {
         '1_Algebra': {'name': 'Algebra (Cebir)', 'topics': []},
         '2_Geometry': {'name': 'Geometry (Geometri)', 'topics': []},
         '3_Calculus': {'name': 'Calculus (Analiz)', 'topics': []}
     }
 
-    for root, dirs, files in os.walk(base_sol):
-        md_files = [f for f in files if f.endswith('.md')]
-        if not md_files:
+    all_problems = []
+    for sec_key, sec_val in sections_def.items():
+        sec_path = os.path.join(SOLUTIONS_DIR, sec_key)
+        if not os.path.isdir(sec_path):
             continue
-        rel = os.path.relpath(root, base_sol)
-        parts = rel.split(os.sep)
-        if len(parts) < 2:
-            continue
-        sec_key, topic_key = parts[0], parts[1]
-        if sec_key not in sections:
-            continue
-        
-        topic_data = {
-            'id': topic_key,
-            'title': topic_key.replace('_', ' ').title(),
-            'solved_count': 0,
-            'total_count': 0,
-            'problems': []
-        }
-        
-        for f in sorted(md_files):
-            p_num_match = re.search(r'problem_(\d+)', f)
-            p_num = int(p_num_match.group(1)) if p_num_match else 0
-            path = os.path.join(root, f)
-            with open(path, 'r', encoding='utf-8') as fp:
-                content = fp.read().strip()
-            is_solved = len(content) > 200 and 'Original Problem' in content
-            
-            first_line = content.split('\n')[0] if content else ''
-            title = first_line.replace('# ', '').strip() if first_line.startswith('# ') else f'Problem {p_num:02d}'
-            
-            topic_data['total_count'] += 1
-            if is_solved:
-                topic_data['solved_count'] += 1
-                
-            topic_data['problems'].append({
-                'num': p_num,
-                'file': f,
-                'path': os.path.relpath(path, os.path.join(DIRECTORY, '..')),
-                'title': title,
-                'solved': is_solved,
-                'chars': len(content)
-            })
-            
-        sections[sec_key]['topics'].append(topic_data)
+        for topic_dir in sorted(os.listdir(sec_path)):
+            top_path = os.path.join(sec_path, topic_dir)
+            if not os.path.isdir(top_path):
+                continue
+            topic_title = topic_dir.replace('_', ' ').title()
+            topic_data = {
+                'id': topic_dir,
+                'title': topic_title,
+                'category_id': sec_key,
+                'category_name': sec_val['name'],
+                'problems': []
+            }
+            for i in range(1, 16):
+                fn = f'problem_{i:02d}_solution.md'
+                sol_path = os.path.join(top_path, fn)
+                if not os.path.exists(sol_path):
+                    continue
+                with open(sol_path, 'r', encoding='utf-8') as fp:
+                    sol_txt = fp.read()
 
-    for s in sections.values():
-        s['topics'].sort(key=lambda x: x['id'])
+                first_line = sol_txt.split('\n')[0].strip()
+                title = first_line.replace('# ', '').strip() if first_line.startswith('# ') else f'Problem {i:02d}'
 
-    with open(os.path.join(DIRECTORY, 'data.json'), 'w', encoding='utf-8') as fp:
-        json.dump(sections, fp, ensure_ascii=False, indent=2)
+                ex_key = f'{sec_key}/{topic_dir}'
+                q_txt = exercises_cache.get(ex_key, {}).get(i, '')
+                if not q_txt:
+                    sec1_match = re.search(r'##\s+1\.\s*Original Problem\s*\n(.*?)(?=(?:##|\Z))', sol_txt, re.DOTALL)
+                    q_txt = sec1_match.group(1).strip() if sec1_match else ''
+
+                parsed_secs = []
+                for sm in re.finditer(r'##\s+(\d+)\.\s*(.*?)\n(.*?)(?=(?:##\s+\d+\.|\Z))', sol_txt, re.DOTALL):
+                    parsed_secs.append({
+                        'num': int(sm.group(1)),
+                        'title': sm.group(2).strip(),
+                        'content': sm.group(3).strip()
+                    })
+
+                is_solved = len(sol_txt) > 200 and 'Original Problem' in sol_txt
+                p_obj = {
+                    'id': f'{sec_key}_{topic_dir}_{i:02d}',
+                    'category_id': sec_key,
+                    'category_name': sec_val['name'],
+                    'topic_id': topic_dir,
+                    'topic_title': topic_title,
+                    'num': i,
+                    'title': title,
+                    'path': os.path.relpath(sol_path, BASE_DIR),
+                    'question_md': q_txt,
+                    'solution_md': sol_txt,
+                    'sections': parsed_secs,
+                    'chars': len(sol_txt),
+                    'solved': is_solved
+                }
+                topic_data['problems'].append(p_obj)
+                all_problems.append(p_obj)
+            sections_def[sec_key]['topics'].append(topic_data)
+
+    out_file = os.path.join(DIRECTORY, 'data.json')
+    with open(out_file, 'w', encoding='utf-8') as fp:
+        json.dump({
+            'sections': sections_def,
+            'total_problems': len(all_problems),
+            'solved_problems': sum(1 for p in all_problems if p['solved'])
+        }, fp, ensure_ascii=False)
+
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -74,12 +118,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
         if self.path.startswith('/data.json'):
-            regenerate_data()
+            # Only regenerate if explicitly refreshed or modified
+            if 'refresh=1' in self.path:
+                regenerate_data()
         return super().do_GET()
+
 
 if __name__ == '__main__':
     regenerate_data()
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        print(f"Serving dashboard at http://localhost:{PORT}")
+        print(f"Serving workbook evaluation portal at http://localhost:{PORT}")
         httpd.serve_forever()
