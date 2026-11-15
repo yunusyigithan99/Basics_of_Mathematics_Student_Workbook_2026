@@ -36,9 +36,9 @@ def regenerate_data():
                     exercises_cache[key] = {int(m[0]): m[1].strip() for m in matches}
 
     sections_def = {
-        '1_Algebra': {'name': 'Algebra (Cebir)', 'topics': []},
-        '2_Geometry': {'name': 'Geometry (Geometri)', 'topics': []},
-        '3_Calculus': {'name': 'Calculus (Analiz)', 'topics': []}
+        '1_Algebra': {'name': '1_Algebra', 'display_name': 'Algebra', 'topics': []},
+        '2_Geometry': {'name': '2_Geometry', 'display_name': 'Geometry', 'topics': []},
+        '3_Calculus': {'name': '3_Calculus', 'display_name': 'Calculus', 'topics': []}
     }
 
     all_problems = []

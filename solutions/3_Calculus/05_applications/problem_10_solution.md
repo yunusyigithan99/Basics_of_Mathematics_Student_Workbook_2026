@@ -62,7 +62,7 @@ We set up a Cartesian coordinate system along the river:
    The remaining straight-line distance along the bank to point $B$ is:
    $$d_{\text{land}} = 500 - x.$$
 3. **Total Cost function:**
-   Let $c > 0$ be the cost per meter of laying cable on land (in arbitrary currency units, e.g., PLN/m or $/m).
+   Let $c > 0$ be the cost per meter of laying cable on land (in arbitrary currency units, e.g., PLN/m or USD/m).
    Then the underwater cost is $2c$ per meter.
    $$C(x) = 2c \cdot d_{\text{water}} + c \cdot d_{\text{land}} = c \left(2\sqrt{x^2 + 10000} + (500 - x)\right).$$
    Because $c$ is a positive constant scalar, minimizing $C(x)$ is mathematically equivalent to minimizing the normalized cost function:

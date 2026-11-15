@@ -1068,6 +1068,69 @@
       border: 1px solid #e7e5e4;
       font-style: italic;
     }
+    /* Vocabulary & Turkish Explanations in Oral Defense */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .vocab-item {
+      background: #ffffff;
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    .vocab-term-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .vocab-en {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #14532d;
+    }
+
+    .vocab-tr-badge {
+      background: #dcfce7;
+      color: #166534;
+      font-size: 0.73rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      border: 1px solid #86efac;
+    }
+
+    .vocab-def {
+      font-size: 0.78rem;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    .glossary-search-input {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      outline: none;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      background: #ffffff;
+    }
+
+    .glossary-search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
 
     /* Print Styles */
     @media print {
@@ -1130,15 +1193,15 @@
     <div class="top-nav-inner">
       <div class="brand">
         <!-- Sidebar Toggle Icon Button -->
-        <button class="btn-secondary" id="sidebarToggleBtn" title="Toggle Sidebar (VS Code style)">
-          <span>&#9776;</span>
+        <button class="btn-secondary" id="sidebarToggleBtn" title="Toggle Sidebar (VS Code Explorer style)">
+          <span>☰</span>
         </button>
 
-        <div class="brand-logo">&sum;</div>
+        <div class="brand-logo">∑</div>
         <div class="brand-text">
           <h1>Basics of Mathematics — Student Workbook 2026</h1>
           <a href="https://github.com/yunusyigithan99/Basics_of_Mathematics_Student_Workbook_2026" target="_blank" class="repo-sublink" title="Open repository on GitHub">
-            <span>&boxbox;</span> github.com/yunusyigithan99/Basics_of_Mathematics_Student_Workbook_2026 &nearr;
+            <span>📦</span> github.com/yunusyigithan99/Basics_of_Mathematics_Student_Workbook_2026 ↗
           </a>
         </div>
       </div>
@@ -1147,28 +1210,28 @@
         <!-- View Switcher: Problem Workspace vs Overview Dashboard -->
         <div class="top-view-switcher">
           <button class="top-view-btn active" id="btnModeProblems">
-            <span>&book;</span> Problems
+            <span>📖</span> Problems
           </button>
           <button class="top-view-btn" id="btnModeDashboard">
-            <span>&bar_chart;</span> Overview Dashboard
+            <span>📊</span> Overview Dashboard
           </button>
         </div>
 
         <!-- Live Instant Search -->
         <div class="search-box">
-          <span class="search-icon">&telrec;</span>
+          <span class="search-icon">🔍</span>
           <input type="text" id="searchInput" placeholder="Search 180 exercises, concepts..." autocomplete="off">
         </div>
 
         <!-- 100% Solved Status Badge -->
         <div class="progress-pill">
-          <span>&check;</span>
+          <span>✓</span>
           <span id="globalStatsText">180 / 180 Solved (100%)</span>
         </div>
 
         <!-- Print / PDF Button -->
         <button class="btn-secondary" onclick="window.print()" title="Print this view or export to PDF">
-          <span>&darr;</span> Print / PDF
+          <span>↓</span> Print / PDF
         </button>
       </div>
     </div>
@@ -1180,12 +1243,12 @@
       <div class="sidebar-header">
         <span>WORKBOOK EXPLORER</span>
         <div class="sidebar-actions">
-          <button class="sidebar-icon-btn" onclick="collapseAllFolders()" title="Collapse All Folders">&minus;</button>
-          <button class="sidebar-icon-btn" onclick="expandAllFolders()" title="Expand All Folders">&plus;</button>
+          <button class="sidebar-icon-btn" onclick="collapseAllFolders()" title="Collapse All Folders">−</button>
+          <button class="sidebar-icon-btn" onclick="expandAllFolders()" title="Expand All Folders">+</button>
         </div>
       </div>
       <div id="sidebarTree">
-        <!-- VS Code style tree loaded dynamically -->
+        <!-- VS Code style tree loaded dynamically from GitHub repo layout -->
       </div>
     </aside>
 
@@ -1200,31 +1263,33 @@
         <!-- View Control Bar -->
         <div class="view-control-bar">
           <div class="breadcrumb-nav">
-            <span id="bcCategory">Calculus</span>
-            <span>&rsaquo;</span>
-            <span id="bcTopic">01 Limits</span>
-            <span>&rsaquo;</span>
-            <span class="active-node" id="bcProblem">Problem 01</span>
+            <span style="color:var(--text-muted); font-weight:500;">solutions</span>
+            <span>›</span>
+            <span id="bcCategory">1_Algebra</span>
+            <span>›</span>
+            <span id="bcTopic">01_matrices_and_operations</span>
+            <span>›</span>
+            <span class="active-node" id="bcProblem">problem_01_solution.md</span>
           </div>
 
           <div class="view-toggles-wrapper">
             <!-- Content Selector: Solution vs Question vs Split View -->
             <div class="segmented-control" id="contentSelector">
               <button class="segmented-btn active" data-content="solution">
-                <span>&book;</span> Solution
+                <span>📖</span> Solution
               </button>
               <button class="segmented-btn" data-content="question">
-                <span>&quest;</span> Question
+                <span>❓</span> Question
               </button>
               <button class="segmented-btn" data-content="split">
-                <span>&harr;</span> Split View
+                <span>↔</span> Split View
               </button>
             </div>
 
             <!-- Format Selector: Rendered Reading vs Source Code -->
             <div class="segmented-control" id="formatSelector">
               <button class="segmented-btn active" data-format="render">
-                <span>&doc;</span> Reading Mode
+                <span>📄</span> Reading Mode
               </button>
               <button class="segmented-btn" data-format="source">
                 <span>&lt;/&gt;</span> Source Code
@@ -1233,16 +1298,16 @@
 
             <!-- Oral Defense Cheat Sheet Popup Trigger -->
             <button class="btn-defense" id="btnOpenOralDefense" title="Open Oral Defense talking points & classroom Q&A guide">
-              <span>&mortarboard;</span> Oral Defense Guide
+              <span>🎓</span> Oral Defense Guide
             </button>
 
             <!-- Previous / Next Navigation -->
             <div class="nav-arrows">
               <button class="nav-arrow-btn" id="btnPrevProblem" title="Previous Exercise (Left Arrow key)">
-                &larr; Prev
+                ← Prev
               </button>
               <button class="nav-arrow-btn" id="btnNextProblem" title="Next Exercise (Right Arrow key)">
-                Next &rarr;
+                Next →
               </button>
             </div>
           </div>
@@ -1283,7 +1348,7 @@
           <div class="kpi-card">
             <div class="kpi-title">Total Coursework Solved</div>
             <div class="kpi-value">180 / 180</div>
-            <div class="kpi-sub">&check; 100.0% Complete</div>
+            <div class="kpi-sub">✓ 100.0% Complete</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-title">Major Disciplines</div>
@@ -1307,7 +1372,7 @@
           <div class="category-card">
             <div class="category-card-header">
               <h3>1. Algebra</h3>
-              <span class="progress-pill">&check; 60 / 60</span>
+              <span class="progress-pill">✓ 60 / 60</span>
             </div>
             <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
             <p style="font-size:0.82rem; color:var(--text-muted);">Matrices, Operations, Determinants, Matrix Inversion, Systems of Linear Equations.</p>
@@ -1316,7 +1381,7 @@
           <div class="category-card">
             <div class="category-card-header">
               <h3>2. Geometry</h3>
-              <span class="progress-pill">&check; 45 / 45</span>
+              <span class="progress-pill">✓ 45 / 45</span>
             </div>
             <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
             <p style="font-size:0.82rem; color:var(--text-muted);">Vectors, Lines and Planes, Second Degree Curves and Quadric Surfaces.</p>
@@ -1325,7 +1390,7 @@
           <div class="category-card">
             <div class="category-card-header">
               <h3>3. Calculus</h3>
-              <span class="progress-pill">&check; 75 / 75</span>
+              <span class="progress-pill">✓ 75 / 75</span>
             </div>
             <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
             <p style="font-size:0.82rem; color:var(--text-muted);">Limits, Derivatives, Function Analysis, Indefinite & Definite Integrals, Applications.</p>
@@ -1353,11 +1418,11 @@
   <div class="modal-backdrop" id="defenseModalBackdrop">
     <div class="modal-card">
       <div class="modal-header">
-        <h3><span>&mortarboard;</span> Oral Defense & Classroom Presentation Guide</h3>
+        <h3><span>🎓</span> Oral Defense & Classroom Presentation Guide</h3>
         <button class="modal-close-btn" id="btnCloseModal" title="Close modal (Esc)">&times;</button>
       </div>
       <div class="modal-body" id="defenseModalBody">
-        <!-- Injected dynamically with problem-specific talking points -->
+        <!-- Injected dynamically with problem-specific talking points & Turkish terminology -->
       </div>
     </div>
   </div>
@@ -1370,7 +1435,125 @@
     let currentContentMode = 'solution'; // 'solution' | 'question' | 'split'
     let currentFormatMode = 'render';   // 'render' | 'source'
     let currentTopView = 'problems';     // 'problems' | 'dashboard'
-    let folderOpenState = {};            // Tracks expanded/collapsed folders
+    let folderOpenState = {};            // Tracks expanded/collapsed folders in tree
+
+    // Comprehensive University Mathematics Vocabulary Dictionary (English -> Turkish + Explanation)
+    const MATH_DICTIONARY = [
+      // Linear Algebra
+      { term: "Matrix", tr: "Matris", def: "Sayıların veya sembollerin dikdörtgen bir tablo şeklinde satır ve sütunlar halinde dizilimi." },
+      { term: "Matrices", tr: "Matrisler", def: "Matrix kelimesinin çoğul hali; birden fazla matris." },
+      { term: "Dimension / Size", tr: "Boyut / Mertebe", def: "Bir matrisin satır ve sütun sayısı (m × n: m satır, n sütun)." },
+      { term: "Entry / Element", tr: "Matris Elemanı", def: "Matrisin içindeki her bir sayı (a_ij: i-yinci satır, j-yinci sütun)." },
+      { term: "Row Vector", tr: "Satır Vektörü", def: "Tek bir satırdan oluşan 1 × n boyutundaki yatay matris veya vektör." },
+      { term: "Column Vector", tr: "Sütun Vektörü", def: "Tek bir sütundan oluşan m × 1 boyutundaki dikey matris veya vektör." },
+      { term: "Dot Product", tr: "Nokta (İç) Çarpım", def: "İki vektörün karşılıklı bileşenlerinin çarpımlarının toplamı (sonuç bir reel sayıdır)." },
+      { term: "Scalar Multiplication", tr: "Skalerle Çarpma", def: "Matrisin veya vektörün tüm elemanlarının tek bir reel katsayı ile çarpılması." },
+      { term: "Matrix Multiplication", tr: "Matris Çarpımı", def: "İlk matrisin satırları ile ikinci matrisin sütunlarının nokta çarpımı; iç boyutlar eşit olmalıdır." },
+      { term: "Noncommutative", tr: "Değişmeli Olmayan", def: "İşlem sırasının sonucu değiştirdiği durum (AB ≠ BA). Matris çarpımı genel olarak değişmeli değildir." },
+      { term: "Identity Matrix", tr: "Birim Matris (I)", def: "Asal köşegeni 1, diğer tüm elemanları 0 olan ve çarpımda etkisiz olan kare matris." },
+      { term: "Transpose", tr: "Devrik (Transpoz, A^T)", def: "Matrisin satırlarının sütun, sütunlarının satır yapılmasıyla elde edilen matris." },
+      { term: "Symmetric Matrix", tr: "Simetrik Matris", def: "Devriği kendisine eşit olan matris (A^T = A)." },
+      { term: "Skew-Symmetric", tr: "Ters Simetrik Matris", def: "Devriği kendisinin negatifine eşit olan matris (A^T = -A, köşegen elemanları daima 0'dır)." },
+      { term: "Trace", tr: "İz (tr)", def: "Kare bir matrisin asal köşegenindeki elemanların toplamı." },
+      { term: "Determinant", tr: "Determinant (det A)", def: "Kare matrislere özgü, hacim/alan ölçekleme çarpanını ve tersinirliği belirleyen skaler değer." },
+      { term: "Sarrus' Rule", tr: "Sarrus Kuralı", def: "3 × 3 matrislerin determinantını ilk iki satırı/sütunu alta/yana yazıp köşegenleri çarparak bulma pratik yöntemi." },
+      { term: "Laplace Expansion", tr: "Laplace (Kofaktör) Açılımı", def: "Determinantı herhangi bir satır veya sütun boyunca minör ve kofaktörlere ayırarak hesaplama." },
+      { term: "Minor", tr: "Minör (M_ij)", def: "Bir elemanın bulunduğu satır ve sütun silindiğinde geriye kalan alt matrisin determinantı." },
+      { term: "Cofactor", tr: "Eşçarpan (Kofaktör, C_ij)", def: "Minörün (-1)^(i+j) işaretiyle çarpılmış hali: C_ij = (-1)^(i+j) M_ij." },
+      { term: "Adjugate / Adjoint", tr: "Ek Matris (adj A)", def: "Kofaktörler matrisinin devriği (transpozu); ters matris formülünde pay kısmıdır." },
+      { term: "Invertible / Non-singular", tr: "Tersi Alınabilir (Tekil Olmayan)", def: "Determinantı sıfır olmayan (det A ≠ 0) ve A^(-1) ters matrisi bulunan matris." },
+      { term: "Singular Matrix", tr: "Tekil (Tersi Olmayan) Matris", def: "Determinantı sıfır olan (det A = 0), tersi alınamayan matris." },
+      { term: "Inverse Matrix", tr: "Ters Matris (A^-1)", def: "A · A^(-1) = A^(-1) · A = I eşitliğini sağlayan matris: A^(-1) = (1 / det A) · adj(A)." },
+      { term: "Elementary Row Operations", tr: "Temel Satır İşlemleri", def: "Satır takası, bir satırı sıfırdan farklı sayıyla çarpma, bir satırın katını diğerine ekleme." },
+      { term: "Gaussian Elimination", tr: "Gauss Yok Etme Yöntemi", def: "Temel satır işlemleriyle matrisi üst üçgensel (satır basamak) forma getirme yöntemi." },
+      { term: "Gauss-Jordan Elimination", tr: "Gauss-Jordan Yöntemi", def: "Matrisi indirgenmiş satır basamak (RREF) forma getirerek doğrudan çözüm veya ters matris bulma." },
+      { term: "Row Echelon Form (REF)", tr: "Satır Basamak Formu", def: "Her satırdaki ilk sıfırdan farklı elemanın bir alt satırdakinin sağında olduğu basamaklı matris yapısı." },
+      { term: "Reduced Row Echelon Form (RREF)", tr: "İndirgenmiş Satır Basamak Formu", def: "Her basamak öncüsünün 1 olduğu ve o sütundaki diğer tüm elemanların 0 olduğu en sade form." },
+      { term: "Rank", tr: "Mertebe / Rank", def: "Bir matristeki lineer bağımsız satır (veya sütun) sayısı; basamak formdaki sıfır olmayan satır sayısı." },
+      { term: "System of Linear Equations", tr: "Lineer Denklem Sistemi", def: "Birden çok bilinmeyenli doğrusal eşitlikler topluluğu (Ax = b)." },
+      { term: "Augmented Matrix", tr: "Genişletilmiş Matris [A|b]", def: "Katsayılar matrisi ile sonuç sütun vektörünün yan yana birleştirildiği matris." },
+      { term: "Consistent / Inconsistent", tr: "Tutarlı / Tutarsız", def: "Tutarlı: en az bir çözümü olan sistem. Tutarsız: hiçbir çözümü olmayan sistem (çelişki, 0 = 1)." },
+      { term: "Unique Solution", tr: "Tek Çözüm", def: "Bilinmeyenlerin yalnızca tek bir sayı grubuyla sağlandığı durum." },
+      { term: "Infinitely Many Solutions", tr: "Sonsuz Çoklukta Çözüm", def: "Sistemde en az bir serbest değişken olduğunda ortaya çıkan sınırsız sayıda çözüm durumu." },
+      { term: "Free Variable", tr: "Serbest Değişken (Parametre)", def: "Sütununda pivot bulunmayan ve keyfi reel değerler (t, s) alabilen değişken." },
+      { term: "Pivot / Leading Variable", tr: "Öncü Değişken (Pivot)", def: "Basamak formundaki satırın sıfırdan farklı ilk elemanı ve onun temsil ettiği temel değişken." },
+      { term: "Cramer's Rule", tr: "Cramer Kuralı", def: "Kare ve det A ≠ 0 olan sistemlerde x_i = det(A_i) / det(A) formülüyle değişkenleri bulma yöntemi." },
+      { term: "Kronecker-Capelli Theorem", tr: "Kronecker-Capelli Teoremi", def: "Lineer sistemin çözülebilmesi için katsayılar matrisinin rankı ile genişletilmiş matrisin rankının eşit olması gerekir: rank(A) = rank([A|b])." },
+      { term: "Eigenvalue", tr: "Özdeğer (λ)", def: "Matris bir vektörle çarpıldığında vektörün yönünü değiştirmeden sadece boyunu λ kat uzatan skaler çarpan (Av = λv)." },
+      { term: "Eigenvector", tr: "Özvektör (v)", def: "Matrisle çarpıldığında doğrultusu değişmeyen, yalnızca boyu ölçeklenen sıfırdan farklı vektör." },
+      { term: "Characteristic Equation", tr: "Karakteristik Denklem", def: "Özdeğerleri bulmak için çözülen det(A - λI) = 0 polinom denklemi." },
+
+      // Geometry & Vectors
+      { term: "Vector", tr: "Vektör", def: "Hem büyüklüğü (şiddeti/boyu) hem de uzayda yönü olan yönlü doğru parçası." },
+      { term: "Magnitude / Norm", tr: "Norm / Vektörün Boyu", def: "Vektörün uzunluğu: ||v|| = √(v_x^2 + v_y^2 + v_z^2)." },
+      { term: "Unit Vector", tr: "Birim Vektör", def: "Uzunluğu tam olarak 1 birim olan vektör (v / ||v|| normalizasyonu)." },
+      { term: "Collinear", tr: "Doğrusal (Aynı Doğrultuda)", def: "Aynı veya paralel doğrular üzerinde bulunan, biri diğerinin skaler katı olan vektörler (u = k·v)." },
+      { term: "Orthogonal / Perpendicular", tr: "Dik / Dikgen", def: "Aralarındaki açı 90° olan; nokta çarpımları sıfır olan nesneler (u · v = 0)." },
+      { term: "Cross Product", tr: "Vektörel Çarpım (u × v)", def: "İki vektöre de dik, büyüklüğü paralelkenarın alanına eşit olan ve sağ el kuralına uyan üçüncü bir vektör üreten çarpım." },
+      { term: "Right-Hand Rule", tr: "Sağ El Kuralı", def: "Vektörel çarpımın uzaydaki yönünü belirleyen kural (u, v ve u × v yönleri)." },
+      { term: "Scalar Triple Product", tr: "Karma (Üçlü Skaler) Çarpım", def: "u · (v × w) işlemi; mutlak değeri bu üç vektörün oluşturduğu paralelyüzün hacmini verir." },
+      { term: "Coplanar", tr: "Düzlemsel (Aynı Düzlemde)", def: "Aynı düzlem içinde yer alan vektörler; üç vektör düzlemsel ise karma çarpımları sıfırdır." },
+      { term: "Parametric Equations", tr: "Parametrik Denklemler", def: "Doğru veya eğri üzerindeki noktaların koordinatlarını t parametresi cinsinden veren denklemler." },
+      { term: "Direction Vector", tr: "Doğrultu Vektörü", def: "Bir uzay doğrusuna paralel olan ve doğrunun yönünü/eğimini belirleyen v = (a, b, c) vektörü." },
+      { term: "Normal Vector", tr: "Normal Vektörü (n)", def: "Bir düzleme veya teğet yüzeyine her noktada dik olan doğrultu vektörü n = (A, B, C)." },
+      { term: "General Equation of a Plane", tr: "Düzlemin Genel Denklemi", def: "Ax + By + Cz + D = 0 biçimindeki lineer denklem; katsayılar (A,B,C) normal vektörüdür." },
+      { term: "Distance from Point to Plane", tr: "Noktanın Düzleme Uzaklığı", def: "d = |Ax_0 + By_0 + Cz_0 + D| / √(A^2 + B^2 + C^2) formülüyle bulunan en kısa dik mesafe." },
+      { term: "Skew Lines", tr: "Aykırı Doğrular", def: "3B uzayda ne kesişen ne de birbirine paralel olan (farklı düzlemlerdeki) doğrular." },
+      { term: "Conic Section", tr: "Konik Eğrisi", def: "Bir koninin düzlemle kesilmesiyle oluşan 2. dereceden eğriler (elips, parabol, hiperbol)." },
+      { term: "Ellipse", tr: "Elips", def: "İki odak noktasına olan uzaklıkları toplamı sabit olan noktalar kümesi (x^2/a^2 + y^2/b^2 = 1)." },
+      { term: "Hyperbola", tr: "Hiperbol", def: "İki odak noktasına olan uzaklıkları farkının mutlak değeri sabit olan noktalar kümesi (x^2/a^2 - y^2/b^2 = 1)." },
+      { term: "Parabola", tr: "Parabol", def: "Odak noktasına ve doğrultman doğrusuna eşit uzaklıkta bulunan noktalar kümesi (y^2 = 2px veya y = ax^2)." },
+      { term: "Focus / Foci", tr: "Odak Noktası / Odaklar", def: "Konik eğrilerinin geometrik tanımında kullanılan sabit referans noktaları." },
+      { term: "Directrix", tr: "Doğrultman Doğrusu", def: "Parabol ve koniklerin tanımında odak noktasıyla birlikte kullanılan sabit doğru." },
+      { term: "Eccentricity", tr: "Dış Merkezlik (e)", def: "Konik eğrisinin basıklık/açıklık oranı (Çember: e=0, Elips: 0<e<1, Parabol: e=1, Hiperbol: e>1)." },
+      { term: "Asymptotes of Hyperbola", tr: "Hiperbol Asimptotları", def: "Hiperbol kollarının sonsuzda teğet gibi yaklaştığı doğrular (y = ± (b/a)x)." },
+      { term: "Quadric Surface", tr: "Kuadrik (2. Dereceden) Yüzey", def: "3B uzayda x, y, z değişkenlerine göre 2. dereceden denklemlerin tanımladığı yüzeyler." },
+      { term: "Ellipsoid", tr: "Elipsoid", def: "Üç asal ekseni olan kapalı yumurta/küre benzeri yüzey (x^2/a^2 + y^2/b^2 + z^2/c^2 = 1)." },
+      { term: "Hyperboloid of One Sheet", tr: "Tek Kanatlı Hiperboloid", def: "Soğutma kulesi biçiminde tek parça kuadrik yüzey (x^2/a^2 + y^2/b^2 - z^2/c^2 = 1)." },
+      { term: "Hyperboloid of Two Sheets", tr: "Çift Kanatlı Hiperboloid", def: "Karşılıklı iki ayrı çanak parçadan oluşan kuadrik yüzey (x^2/a^2 + y^2/b^2 - z^2/c^2 = -1)." },
+      { term: "Elliptic Paraboloid", tr: "Eliptik Paraboloid", def: "Çanak/fincan şeklinde, tabanı tek bir tepe noktası olan yüzey (z = x^2/a^2 + y^2/b^2)." },
+      { term: "Hyperbolic Paraboloid", tr: "Hiperbolik Paraboloid (Eğer Yüzeyi)", def: "At eyeri şeklinde, merkezinde bir eyer noktası bulunan yüzey (z = x^2/a^2 - y^2/b^2)." },
+
+      // Calculus & Analysis
+      { term: "Limit", tr: "Limit", def: "Değişken bir noktaya sonsuz yaklaştığında fonksiyonun değerlerinin yaklaştığı hedef sayı." },
+      { term: "One-Sided Limit", tr: "Tek Taraflı Limit", def: "Noktaya sadece soldan (x → x_0^-) veya sadece sağdan (x → x_0^+) yaklaşırkenki limit." },
+      { term: "Continuity / Continuous", tr: "Süreklilik / Sürekli", def: "Grafiğinde kopma, sıçrama veya delik olmaması; lim_{x → x_0} f(x) = f(x_0) eşitliği." },
+      { term: "Indeterminate Form", tr: "Belirsizlik Biçimi", def: "Doğrudan yerine koyma ile çözülemeyen durumlar: 0/0, ∞/∞, 0·∞, ∞-∞, 1^∞, 0^0, ∞^0." },
+      { term: "Squeeze Theorem", tr: "Sıkıştırma (Sandviç) Teoremi", def: "Eğer g(x) ≤ f(x) ≤ h(x) ve her iki uç aynı limite gidiyorsa ortadaki f(x) de aynı limite gider." },
+      { term: "L'Hôpital's Rule", tr: "L'Hôpital Kuralı", def: "0/0 veya ∞/∞ belirsizliklerinde pay ve paydanın ayrı ayrı türevini alarak limiti hesaplama yöntemi." },
+      { term: "Derivative", tr: "Türev", def: "Fonksiyonun anlık değişim hızı ve grafiğine çizilen teğetin eğimi: f'(x) = lim_{h→0} [f(x+h)-f(x)]/h." },
+      { term: "Differentiable", tr: "Türevlenebilir", def: "Fonksiyonun o noktada sonlu bir türevinin bulunması (türevlenebilen fonksiyon daima süreklidir)." },
+      { term: "Tangent Line", tr: "Teğet Doğrusu", def: "Eğriye tek bir noktada temas eden ve eğimi o noktadaki türeve eşit olan doğru: y - y_0 = f'(x_0)(x - x_0)." },
+      { term: "Normal Line", tr: "Normal Doğrusu", def: "Teğet noktasına dik olan doğru (eğimi m_n = -1 / f'(x_0))." },
+      { term: "Product Rule", tr: "Çarpım Kuralı", def: "İki fonksiyonun çarpımının türevi: (uv)' = u'v + uv'." },
+      { term: "Quotient Rule", tr: "Bölüm Kuralı", def: "İki fonksiyonun bölümünün türevi: (u/v)' = (u'v - uv') / v^2." },
+      { term: "Chain Rule", tr: "Zincir Kuralı", def: "Bileşke fonksiyonun türevi: [f(g(x))]' = f'(g(x)) · g'(x)." },
+      { term: "Monotonicity", tr: "Monotonluk", def: "Fonksiyonun bir aralıkta sürekli artan veya sürekli azalan olma özelliği." },
+      { term: "Increasing / Decreasing", tr: "Artan / Azalan", def: "Birinci türev pozitifse (f' > 0) artan, negatifse (f' < 0) azalandır." },
+      { term: "Critical Point", tr: "Kritik / Durağan Nokta", def: "Birinci türevin sıfır olduğu (f'(x) = 0) veya türevin tanımlı olmadığı noktalar." },
+      { term: "Local Extrema", tr: "Yerel Ekstremum (Min / Max)", def: "Fonksiyonun yakın çevresindeki en küçük (çukur) veya en büyük (tepe) değeri." },
+      { term: "First Derivative Test", tr: "Birinci Türev Testi", def: "Türevin işaret değişimine bakarak (+ → - maksimum, - → + minimum) ekstremum belirleme." },
+      { term: "Second Derivative Test", tr: "İkinci Türev Testi", def: "f'(x_0) = 0 iken f''(x_0) > 0 ise yerel min, f''(x_0) < 0 ise yerel max'tır." },
+      { term: "Concavity", tr: "Eğrilik (İçbükeylik / Dışbükeylik)", def: "İkinci türevin işaretine göre eğrinin bükülme yönü (f'' > 0 yukarı bükey/kase, f'' < 0 aşağı bükey/kubbe)." },
+      { term: "Inflection Point", tr: "Büküm (Dönüm) Noktası", def: "Fonksiyonun eğriliğinin yön değiştirdiği, ikinci türevin sıfır olup işaret değiştirdiği nokta." },
+      { term: "Asymptote", tr: "Asimptot (Düşey / Yatay / Eğik)", def: "Eğrinin sonsuza giderken gitgide yaklaştığı ama kesişmek zorunda olmadığı referans doğruları." },
+      { term: "Curve Sketching", tr: "Grafik Çizimi (Fonksiyon İncelemesi)", def: "Tanım kümesi, eksen kesimleri, asimptotlar, türevler ve değişim tablosu çıkarılarak grafiği çizme süreci." },
+      { term: "Antiderivative", tr: "Belirsiz İntegral (İlkel Fonksiyon)", def: "Türevi verilen fonksiyonu oluşturan ters işlem: ∫ f(x)dx = F(x) + C." },
+      { term: "Constant of Integration", tr: "İntegrasyon Sabiti (+C)", def: "Sabit sayıların türevi sıfır olduğu için belirsiz integralin sonuna zorunlu olarak eklenen keyfi reel sabit." },
+      { term: "Integration by Substitution", tr: "Değişken Değiştirme (u-dönüşümü)", def: "Karmaşık integrali u = g(x) ve du = g'(x)dx dönüşümüyle standart forma getirme yöntemi." },
+      { term: "Integration by Parts", tr: "Kısmi İntegrasyon", def: "Çarpım türevinin tersi: ∫ u dv = uv - ∫ v du (L-A-P-T-E kuralı)." },
+      { term: "Partial Fractions", tr: "Basit Kesirlere Ayırma", def: "Rasyonel fonksiyonları P(x)/Q(x) daha kolay integrallenebilir basit kesirlerin toplamı şeklinde yazma." },
+      { term: "Definite Integral", tr: "Belirli İntegral", def: "Fonksiyon eğrisi ile x ekseni arasında kalan net işaretli alanı veren ∫_a^b f(x)dx skaler değeri." },
+      { term: "Fundamental Theorem of Calculus", tr: "Analizin Temel Teoremi (FTC)", def: "Türev ile integrali bağlayan ve belirli integrali hesaplatan formül: ∫_a^b f(x)dx = F(b) - F(a)." },
+      { term: "Area Between Curves", tr: "Eğriler Arasındaki Alan", def: "İki eğri arasında kalan alan: A = ∫_a^b (y_üst - y_alt) dx." },
+      { term: "Volume of Revolution", tr: "Dönel Cisim Hacmi (Disk Yöntemi)", def: "Bir eğrinin eksen etrafında 360° döndürülmesiyle oluşan katı cismin hacmi: V = π ∫ [f(x)]^2 dx." },
+      { term: "Arc Length", tr: "Yay Uzunluğu", def: "Bir fonksiyon grafiğinin iki nokta arasındaki gerçek eğri uzunluğu: L = ∫ √(1 + [f'(x)]^2) dx." },
+      { term: "Surface Area of Revolution", tr: "Dönel Yüzey Alanı", def: "Eğrinin döndürülmesiyle oluşan yüzeyin dış kabuk alanı: S = 2π ∫ f(x) √(1 + [f'(x)]^2) dx." },
+      { term: "Centroid / Center of Mass", tr: "Kütle Merkezi (Geometrik Merkez)", def: "Düzlemsel bir bölgenin dengede duracağı ortalama ağırlık koordinatları (x̄, ȳ)." },
+      { term: "Consumer Surplus", tr: "Tüketici Rantı (CS)", def: "Tüketicilerin ödemeye razı olduğu fiyat ile piyasa denge fiyatı arasında kalan toplam tasarruf alanı." },
+      { term: "Producer Surplus", tr: "Üretici Rantı (PS)", def: "Piyasa denge fiyatı ile üreticilerin satmaya razı olduğu asgari maliyet eğrisi arasındaki üretici kazancı alanı." },
+      { term: "Marginal Cost / Revenue", tr: "Marjinal Maliyet / Gelir", def: "Üretimi bir birim artırmanın getirdiği ek maliyet veya ek gelir (maliyet/gelir fonksiyonunun türevi)." }
+    ];
 
     // Fetch data and boot app
     async function initApp() {
@@ -1396,18 +1579,19 @@
       }
     }
 
-    // Render VS Code Style Tree Sidebar
+    // Render VS Code / GitHub Repository Style Explorer Sidebar
     function renderVsCodeSidebar(filteredList = null) {
       const container = document.getElementById('sidebarTree');
       container.innerHTML = '';
 
       if (filteredList !== null) {
-        // Filtered Search Results
+        // Search Results view
         const searchFolder = document.createElement('div');
         searchFolder.className = 'tree-folder open';
         searchFolder.innerHTML = `
           <div class="folder-label category">
-            <span>Search Results (${filteredList.length})</span>
+            <span class="folder-chevron">▾</span>
+            <span>🔍 Search Results (${filteredList.length})</span>
           </div>
           <div class="folder-children" style="display:block;"></div>
         `;
@@ -1417,10 +1601,15 @@
           const globalIdx = allProblemsFlat.findIndex(p => p.id === prob.id);
           const fileDiv = document.createElement('div');
           fileDiv.className = `tree-file ${globalIdx === currentProblemIndex ? 'active' : ''}`;
+          fileDiv.id = `tree-file-${globalIdx}`;
+          const fileName = prob.path.split('/').pop() || `problem_${String(prob.num).padStart(2, '0')}_solution.md`;
           fileDiv.innerHTML = `
-            <span style="font-size:0.75rem;">&doc;</span>
-            <div class="file-name-truncate"><strong>#${String(prob.num).padStart(2, '0')}</strong> ${prob.title.replace(/^Problem\s+\d+:\s*/, '')}</div>
-            <span class="badge-check-icon">&check;</span>
+            <span style="font-size:0.8rem; color:var(--text-muted); flex-shrink:0;">📄</span>
+            <div class="file-name-truncate" title="${prob.path}">
+              <strong>${fileName}</strong>
+              <span style="font-size:0.7rem; color:var(--text-muted); display:block;">${prob.category_id} / ${prob.topic_id}</span>
+            </div>
+            <span class="badge-check-icon" title="Fully Solved">✓</span>
           `;
           fileDiv.onclick = () => {
             switchToProblemsView();
@@ -1433,23 +1622,44 @@
         return;
       }
 
-      // Categories and Topics Tree
+      // Root Repository Node: "solutions/"
+      const rootFolderId = 'root_solutions';
+      const isRootOpen = folderOpenState[rootFolderId] !== false; // default open
+      const rootFolder = document.createElement('div');
+      rootFolder.className = `tree-folder ${isRootOpen ? 'open' : ''}`;
+      rootFolder.id = rootFolderId;
+
+      rootFolder.innerHTML = `
+        <div class="folder-label category" onclick="toggleFolder('${rootFolderId}')" title="Root repository solutions directory">
+          <span class="folder-chevron">${isRootOpen ? '▾' : '›'}</span>
+          <span>📁 solutions</span>
+          <span style="margin-left:auto; font-size:0.7rem; color:var(--text-light); font-weight:500;">180/180 ✓</span>
+        </div>
+        <div class="folder-children"></div>
+      `;
+      const rootChildren = rootFolder.querySelector('.folder-children');
+
+      // Categories (1_Algebra, 2_Geometry, 3_Calculus)
       for (const [secKey, sec] of Object.entries(appData.sections)) {
-        const catFolder = document.createElement('div');
         const catFolderId = `cat_${secKey}`;
         const isCatOpen = folderOpenState[catFolderId] !== false; // default open
+        const catFolder = document.createElement('div');
         catFolder.className = `tree-folder ${isCatOpen ? 'open' : ''}`;
         catFolder.id = catFolderId;
 
+        const catProblemCount = sec.topics.reduce((acc, t) => acc + t.problems.length, 0);
+
         catFolder.innerHTML = `
-          <div class="folder-label category" onclick="toggleFolder('${catFolderId}')">
-            <span class="folder-chevron">&rsaquo;</span>
-            <span>&folder; ${sec.name}</span>
+          <div class="folder-label" style="font-weight:600; padding-left:18px;" onclick="toggleFolder('${catFolderId}')">
+            <span class="folder-chevron">${isCatOpen ? '▾' : '›'}</span>
+            <span>📁 ${secKey}</span>
+            <span style="margin-left:auto; font-size:0.7rem; color:var(--text-light); font-weight:400;">${catProblemCount}/${catProblemCount}</span>
           </div>
           <div class="folder-children"></div>
         `;
         const catChildren = catFolder.querySelector('.folder-children');
 
+        // Topic Units (e.g. 01_matrices_and_operations)
         sec.topics.forEach(topic => {
           const topicFolderId = `top_${secKey}_${topic.id}`;
           const isTopicOpen = folderOpenState[topicFolderId] !== false; // default open
@@ -1458,26 +1668,28 @@
           topicFolder.id = topicFolderId;
 
           topicFolder.innerHTML = `
-            <div class="folder-label" onclick="toggleFolder('${topicFolderId}')">
-              <span class="folder-chevron">&rsaquo;</span>
-              <span>&folder; ${topic.title}</span>
+            <div class="folder-label" style="padding-left:28px;" onclick="toggleFolder('${topicFolderId}')">
+              <span class="folder-chevron">${isTopicOpen ? '▾' : '›'}</span>
+              <span>📁 ${topic.id}</span>
               <span style="margin-left:auto; font-size:0.7rem; color:var(--text-light); font-weight:400;">15/15</span>
             </div>
             <div class="folder-children"></div>
           `;
           const topicChildren = topicFolder.querySelector('.folder-children');
 
+          // Problem solution files (problem_01_solution.md, etc.)
           topic.problems.forEach(prob => {
             const globalIdx = allProblemsFlat.findIndex(p => p.id === prob.id);
             const fileItem = document.createElement('div');
             fileItem.className = `tree-file ${globalIdx === currentProblemIndex ? 'active' : ''}`;
             fileItem.id = `tree-file-${globalIdx}`;
+            fileItem.style.paddingLeft = '40px';
 
-            const shortTitle = prob.title.replace(/^Problem\s+\d+:\s*/, '');
+            const fileName = `problem_${String(prob.num).padStart(2, '0')}_solution.md`;
             fileItem.innerHTML = `
-              <span style="font-size:0.75rem; color:var(--text-muted);">&doc;</span>
-              <div class="file-name-truncate">problem_${String(prob.num).padStart(2, '0')}.md</div>
-              <span class="badge-check-icon" title="Fully Solved">&check;</span>
+              <span style="font-size:0.8rem; color:var(--text-muted); flex-shrink:0;">📄</span>
+              <div class="file-name-truncate" title="${prob.title}">${fileName}</div>
+              <span class="badge-check-icon" title="Fully Solved">✓</span>
             `;
             fileItem.onclick = () => {
               switchToProblemsView();
@@ -1489,16 +1701,23 @@
           catChildren.appendChild(topicFolder);
         });
 
-        container.appendChild(catFolder);
+        rootChildren.appendChild(catFolder);
       }
+
+      container.appendChild(rootFolder);
     }
 
-    // Toggle single folder
+    // Toggle single folder expand/collapse
     function toggleFolder(folderId) {
       const folder = document.getElementById(folderId);
       if (!folder) return;
       folder.classList.toggle('open');
-      folderOpenState[folderId] = folder.classList.contains('open');
+      const isOpen = folder.classList.contains('open');
+      folderOpenState[folderId] = isOpen;
+      const chevron = folder.querySelector(':scope > .folder-label > .folder-chevron');
+      if (chevron) {
+        chevron.textContent = isOpen ? '▾' : '›';
+      }
     }
 
     // Expand all folders
@@ -1506,6 +1725,8 @@
       document.querySelectorAll('.tree-folder').forEach(f => {
         f.classList.add('open');
         folderOpenState[f.id] = true;
+        const chevron = f.querySelector(':scope > .folder-label > .folder-chevron');
+        if (chevron) chevron.textContent = '▾';
       });
     }
 
@@ -1514,6 +1735,8 @@
       document.querySelectorAll('.tree-folder').forEach(f => {
         f.classList.remove('open');
         folderOpenState[f.id] = false;
+        const chevron = f.querySelector(':scope > .folder-label > .folder-chevron');
+        if (chevron) chevron.textContent = '›';
       });
     }
 
@@ -1528,10 +1751,10 @@
       currentProblemIndex = index;
       const prob = allProblemsFlat[currentProblemIndex];
 
-      // Update Breadcrumbs
-      document.getElementById('bcCategory').textContent = prob.category_name.split(' ')[0];
-      document.getElementById('bcTopic').textContent = prob.topic_title;
-      document.getElementById('bcProblem').textContent = `Problem ${String(prob.num).padStart(2, '0')}`;
+      // Update Breadcrumbs to match exact GitHub repository file path
+      document.getElementById('bcCategory').textContent = prob.category_id;
+      document.getElementById('bcTopic').textContent = prob.topic_id;
+      document.getElementById('bcProblem').textContent = `problem_${String(prob.num).padStart(2, '0')}_solution.md`;
 
       // Update Navigation Buttons
       document.getElementById('btnPrevProblem').disabled = (currentProblemIndex === 0);
@@ -1547,6 +1770,8 @@
         while (parent) {
           parent.classList.add('open');
           folderOpenState[parent.id] = true;
+          const chevron = parent.querySelector(':scope > .folder-label > .folder-chevron');
+          if (chevron) chevron.textContent = '▾';
           parent = parent.parentElement.closest('.tree-folder');
         }
         activeFile.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -1584,7 +1809,7 @@
             <div class="source-toolbar">
               <span class="file-path">${fileLabel}</span>
               <div style="display:flex; align-items:center; gap:12px;">
-                <span>${lineCount} lines &bull; ${charCount} chars</span>
+                <span>${lineCount} lines • ${charCount} chars</span>
                 <button class="btn-secondary" style="padding:3px 8px; font-size:0.75rem;" onclick="copyRawCode()">
                   Copy Raw Markdown
                 </button>
@@ -1603,7 +1828,7 @@
             <!-- Left Column: Question -->
             <div class="split-col">
               <div class="split-col-header">
-                <span>&quest; Original Problem Statement</span>
+                <span>❓ Original Problem Statement</span>
                 <span style="font-weight:400; font-size:0.75rem;">Problem #${prob.num}</span>
               </div>
               <div class="content-body" id="splitQuestionContent">
@@ -1614,9 +1839,9 @@
             <!-- Right Column: 9-Part Solution -->
             <div class="split-col">
               <div class="split-col-header">
-                <span>&book; 9-Part Pedagogical Solution</span>
+                <span>📖 9-Part Pedagogical Solution</span>
                 <button class="btn-defense" style="padding:2px 8px; font-size:0.72rem;" onclick="openOralDefenseModal()">
-                  &mortarboard; Defense Card
+                  🎓 Defense Card
                 </button>
               </div>
               <div class="content-body" id="splitSolutionContent">
@@ -1626,8 +1851,8 @@
           </div>
         `;
 
-        renderMath(document.getElementById('splitQuestionContent'));
-        renderMath(document.getElementById('splitSolutionContent'));
+        renderMathFallback(document.getElementById('splitQuestionContent'));
+        renderMathFallback(document.getElementById('splitSolutionContent'));
         return;
       }
 
@@ -1640,10 +1865,10 @@
           <div class="problem-header">
             <h2>${prob.title}</h2>
             <div class="problem-meta">
-              <span><strong>Category:</strong> ${prob.category_name}</span>
-              <span><strong>Unit:</strong> ${prob.topic_title}</span>
-              <span><strong>Problem:</strong> #${prob.num} of 15</span>
-              <span><strong>Verification:</strong> 9/9 Sections Complete</span>
+              <span><strong>Category:</strong> ${prob.category_id}</span>
+              <span><strong>Unit:</strong> ${prob.topic_id}</span>
+              <span><strong>File:</strong> ${prob.path.split('/').pop()}</span>
+              <span><strong>Verification:</strong> 9/9 Sections Complete ✓</span>
             </div>
           </div>
           <div class="content-body" id="renderedCardContent">
@@ -1652,7 +1877,7 @@
         </div>
       `;
 
-      renderMath(document.getElementById('renderedCardContent'));
+      renderMathFallback(document.getElementById('renderedCardContent'));
       enhancePedagogicalSections();
     }
 
@@ -1667,8 +1892,8 @@
           card.className = 'topic-unit-card';
           card.innerHTML = `
             <h4>
-              <span>${topic.title}</span>
-              <span style="font-size:0.75rem; color:var(--success-text); font-weight:600;">15/15 &check;</span>
+              <span>${secKey} / ${topic.id}</span>
+              <span style="font-size:0.75rem; color:var(--success-text); font-weight:600;">15/15 ✓</span>
             </h4>
             <div class="problem-pills-grid"></div>
           `;
@@ -1679,7 +1904,7 @@
             const a = document.createElement('a');
             a.className = 'problem-pill-btn';
             a.textContent = p.num;
-            a.title = p.title;
+            a.title = `${p.path} - ${p.title}`;
             a.onclick = () => {
               switchToProblemsView();
               selectProblem(globalIdx);
@@ -1692,15 +1917,76 @@
       }
     }
 
-    // Markdown Parser with Marked
+    // ==============================================================
+    // ROBUST MATHEMATICS & MARKDOWN RENDERING PIPELINE
+    // Protects LaTeX from Marked parsing so KaTeX receives pristine input
+    // ==============================================================
     function formatMarkdown(md) {
       if (!md) return '<p><em>No content available.</em></p>';
-      marked.setOptions({ gfm: true, breaks: true });
-      return marked.parse(md);
+
+      // Step 1: Protect code blocks from math extraction
+      const codeBlocks = [];
+      let processed = md.replace(/(```[\s\S]*?```|`[^`\n]+`)/g, (match) => {
+        const placeholder = `@@@CODEBLOCK_${codeBlocks.length}@@@`;
+        codeBlocks.push(match);
+        return placeholder;
+      });
+
+      // Step 2: Extract Display Math: $$ ... $$ and \[ ... \]
+      const mathBlocks = [];
+      processed = processed.replace(/(\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\])/g, (match) => {
+        let raw = match;
+        if (raw.startsWith('$$') && raw.endsWith('$$')) {
+          raw = raw.slice(2, -2).trim();
+        } else if (raw.startsWith('\\[') && raw.endsWith('\\]')) {
+          raw = raw.slice(2, -2).trim();
+        }
+        const idx = mathBlocks.length;
+        mathBlocks.push({ math: raw, display: true });
+        return `@@@MATH_DISP_${idx}@@@`;
+      });
+
+      // Step 3: Extract Inline Math: $ ... $ and \( ... \)
+      // Negative lookbehind ensures escaped \$ is not treated as math delimiter
+      processed = processed.replace(/(?<!\\)\$([^\$\n\r]+?)(?<!\\)\$|\\\(([^\n\r]+?)\\\)/g, (match, p1, p2) => {
+        const raw = (p1 !== undefined ? p1 : p2).trim();
+        const idx = mathBlocks.length;
+        mathBlocks.push({ math: raw, display: false });
+        return `@@@MATH_INL_${idx}@@@`;
+      });
+
+      // Step 4: Restore code blocks
+      processed = processed.replace(/@@@CODEBLOCK_(\d+)@@@/g, (match, idx) => {
+        return codeBlocks[parseInt(idx, 10)] || match;
+      });
+
+      // Step 5: Parse Markdown with Marked (now completely free of LaTeX!)
+      marked.setOptions({ gfm: true, breaks: false });
+      let html = marked.parse(processed);
+
+      // Step 6: Render each math token directly with KaTeX into HTML
+      html = html.replace(/@@@MATH_(DISP|INL)_(\d+)@@@/g, (match, type, idx) => {
+        const item = mathBlocks[parseInt(idx, 10)];
+        if (!item) return match;
+        try {
+          if (typeof katex !== 'undefined') {
+            return katex.renderToString(item.math, {
+              displayMode: item.display,
+              throwOnError: false
+            });
+          }
+          return item.display ? `$$${item.math}$$` : `$${item.math}$`;
+        } catch (e) {
+          console.warn('KaTeX render warning:', e);
+          return `<span class="katex-error" title="${e.message}">${item.math}</span>`;
+        }
+      });
+
+      return html;
     }
 
-    // KaTeX Math Formula Renderer
-    function renderMath(element) {
+    // Safety fallback for any unparsed formulas
+    function renderMathFallback(element) {
       if (!element || typeof renderMathInElement === 'undefined') return;
       try {
         renderMathInElement(element, {
@@ -1713,7 +1999,7 @@
           throwOnError: false
         });
       } catch (e) {
-        console.warn('KaTeX render warning:', e);
+        console.warn('KaTeX fallback warning:', e);
       }
     }
 
@@ -1732,9 +2018,9 @@
           box.id = 'sec-jump-9';
           box.innerHTML = `
             <div class="callout-classroom-header">
-              <div class="callout-classroom-title">&speech_balloon; Classroom Oral Defense (3-Sentence Spoken Pitch)</div>
+              <div class="callout-classroom-title">💬 Classroom Oral Defense (3-Sentence Spoken Pitch)</div>
               <button class="btn-defense" style="padding:2px 8px; font-size:0.72rem;" onclick="openOralDefenseModal()">
-                &mortarboard; Open Defense Guide
+                🎓 Open Defense Guide
               </button>
             </div>
           `;
@@ -1753,7 +2039,7 @@
           const box = document.createElement('div');
           box.className = 'callout-answer';
           box.id = 'sec-jump-6';
-          box.innerHTML = `<div class="callout-answer-title">&check; Final Answer in Words</div>`;
+          box.innerHTML = `<div class="callout-answer-title">✓ Final Answer in Words</div>`;
           let next = h2.nextElementSibling;
           h2.parentNode.insertBefore(box, h2);
           box.appendChild(h2);
@@ -1781,7 +2067,7 @@
       }
     }
 
-    // Escape HTML for code view
+    // Escape HTML for source code view
     function escapeHtml(str) {
       return String(str)
         .replace(/&/g, '&amp;')
@@ -1817,51 +2103,52 @@
       document.getElementById('dashboardOverviewView').classList.add('active');
     }
 
+    // Event Listeners for View Switcher
     document.getElementById('btnModeProblems').addEventListener('click', switchToProblemsView);
     document.getElementById('btnModeDashboard').addEventListener('click', switchToDashboardView);
 
-    // View Toggles: Solution vs Question vs Split
+    // Event Listeners for Content Mode (Solution / Question / Split)
     document.querySelectorAll('#contentSelector .segmented-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('#contentSelector .segmented-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        currentContentMode = btn.dataset.content;
+        currentContentMode = btn.getAttribute('data-content');
         renderMainWorkspace();
       });
     });
 
-    // Format Toggles: Rendered vs Source
+    // Event Listeners for Format Mode (Rendered / Source)
     document.querySelectorAll('#formatSelector .segmented-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('#formatSelector .segmented-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        currentFormatMode = btn.dataset.format;
+        currentFormatMode = btn.getAttribute('data-format');
         renderMainWorkspace();
       });
     });
 
-    // Prev / Next Navigation Buttons
+    // Navigation Buttons
     document.getElementById('btnPrevProblem').addEventListener('click', () => {
-      selectProblem(currentProblemIndex - 1);
+      if (currentProblemIndex > 0) selectProblem(currentProblemIndex - 1);
     });
 
     document.getElementById('btnNextProblem').addEventListener('click', () => {
-      selectProblem(currentProblemIndex + 1);
+      if (currentProblemIndex < allProblemsFlat.length - 1) selectProblem(currentProblemIndex + 1);
     });
 
-    // Keyboard Shortcuts: Left / Right Arrows
+    // Keyboard Shortcuts (Arrow Left / Right)
     window.addEventListener('keydown', (e) => {
-      if (e.target.tagName === 'INPUT') return;
-      if (e.key === 'ArrowLeft') {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowLeft' && currentProblemIndex > 0) {
         selectProblem(currentProblemIndex - 1);
-      } else if (e.key === 'ArrowRight') {
+      } else if (e.key === 'ArrowRight' && currentProblemIndex < allProblemsFlat.length - 1) {
         selectProblem(currentProblemIndex + 1);
       } else if (e.key === 'Escape') {
         closeOralDefenseModal();
       }
     });
 
-    // Real-time Search Handler
+    // Instant Search
     document.getElementById('searchInput').addEventListener('input', (e) => {
       const q = e.target.value.toLowerCase().trim();
       if (!q) {
@@ -1872,10 +2159,9 @@
       const matches = allProblemsFlat.filter(p => {
         return (
           p.title.toLowerCase().includes(q) ||
-          p.topic_title.toLowerCase().includes(q) ||
-          p.category_name.toLowerCase().includes(q) ||
-          `#${p.num}`.includes(q) ||
-          `problem ${p.num}`.includes(q) ||
+          p.path.toLowerCase().includes(q) ||
+          p.topic_id.toLowerCase().includes(q) ||
+          p.category_id.toLowerCase().includes(q) ||
           p.solution_md.toLowerCase().includes(q)
         );
       });
@@ -1883,73 +2169,172 @@
       renderVsCodeSidebar(matches);
     });
 
-    // ==========================================
-    // ORAL DEFENSE / CLASSROOM Q&A MODAL LOGIC
-    // ==========================================
+    // ==============================================================
+    // ORAL DEFENSE / CLASSROOM Q&A MODAL WITH TURKISH VOCABULARY AID
+    // ==============================================================
     function openOralDefenseModal() {
       const prob = allProblemsFlat[currentProblemIndex];
       const body = document.getElementById('defenseModalBody');
 
       // Find section contents
-      const sec9 = prob.sections.find(s => s.num === 9)?.content || 'Presentation pitch available in solution.';
-      const sec5 = prob.sections.find(s => s.num === 5)?.content || 'Step justifications available in solution.';
-      const sec6 = prob.sections.find(s => s.num === 6)?.content || 'Final verbal answer available in solution.';
-      const sec8 = prob.sections.find(s => s.num === 8)?.content || 'Common pitfalls available in solution.';
-      const sec3 = prob.sections.find(s => s.num === 3)?.content || 'Key concepts available in solution.';
+      const sec9 = prob.sections.find(s => s.num === 9)?.content || 'Classroom presentation pitch available in solution text.';
+      const sec5 = prob.sections.find(s => s.num === 5)?.content || 'Mathematical justifications available in solution text.';
+      const sec6 = prob.sections.find(s => s.num === 6)?.content || 'Final answer available in solution text.';
+      const sec8 = prob.sections.find(s => s.num === 8)?.content || 'Pitfalls and trap defense available in solution text.';
+      const sec3 = prob.sections.find(s => s.num === 3)?.content || 'Underlying principles available in solution text.';
+
+      // Scan problem text and match vocabulary from dictionary
+      const corpus = (prob.title + ' ' + prob.question_md + ' ' + prob.solution_md).toLowerCase();
+      const matchedVocab = MATH_DICTIONARY.filter(item => {
+        // match keywords with length >= 4
+        const keywords = item.term.toLowerCase().split(/[\s\/\(\)]+/).filter(w => w.length >= 4);
+        return keywords.some(k => corpus.includes(k));
+      });
 
       body.innerHTML = `
         <div style="margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);">
           <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600;">
-            ${prob.category_name} &bull; ${prob.topic_title}
+            ${prob.path}
           </div>
           <h2 style="font-size: 1.3rem; font-weight: 700; color: var(--text); margin-top: 4px;">
             ${prob.title}
           </h2>
         </div>
 
-        <!-- 1. The 30-Second Elevator Pitch -->
+        <!-- 1. Key Mathematical Vocabulary in This Problem (Turkish Aids) -->
+        <div class="defense-section-card" style="background:#f0fdf4; border-color:#bbf7d0;">
+          <div class="defense-section-title" style="color:#166534;">
+            <span>💡</span> Key Vocabulary & Mathematical Concepts (Türkçe Karşılıkları)
+          </div>
+          <p style="font-size:0.8rem; color:#15803d; margin-bottom:10px;">
+            Derste hocaya anlatım yaparken veya hocadan soru geldiğinde bilmen gereken terimlerin Türkçe anlamları ve açıklamaları:
+          </p>
+          <div class="vocab-grid" id="problemVocabGrid">
+            ${matchedVocab.slice(0, 8).map(v => `
+              <div class="vocab-item">
+                <div class="vocab-term-row">
+                  <span class="vocab-en">${v.term}</span>
+                  <span class="vocab-tr-badge">${v.tr}</span>
+                </div>
+                <div class="vocab-def">${v.def}</div>
+              </div>
+            `).join('')}
+          </div>
+          ${matchedVocab.length > 8 ? `
+            <details style="margin-top:10px;">
+              <summary style="font-size:0.78rem; color:#15803d; font-weight:600; cursor:pointer;">
+                + Bu problemle ilgili diğer ${matchedVocab.length - 8} terimi daha göster...
+              </summary>
+              <div class="vocab-grid" style="margin-top:8px;">
+                ${matchedVocab.slice(8).map(v => `
+                  <div class="vocab-item">
+                    <div class="vocab-term-row">
+                      <span class="vocab-en">${v.term}</span>
+                      <span class="vocab-tr-badge">${v.tr}</span>
+                    </div>
+                    <div class="vocab-def">${v.def}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </details>
+          ` : ''}
+        </div>
+
+        <!-- 2. The 30-Second Classroom Elevator Pitch -->
         <div class="defense-section-card">
           <div class="defense-section-title">
-            <span>&speech_balloon;</span> When the Professor Asks: "Can you summarize your approach and solution?"
+            <span>💬</span> When the Professor Asks: "Can you summarize your approach and solution?"
           </div>
           <div class="defense-spoken-text">
             "${formatMarkdown(sec9).replace(/<[^>]+>/g, '').trim()}"
           </div>
         </div>
 
-        <!-- 2. Step Justifications -->
+        <!-- 3. Step Justifications -->
         <div class="defense-section-card">
           <div class="defense-section-title">
-            <span>&check;</span> When the Professor Asks: "Why is each key step mathematically valid?"
+            <span>✓</span> When the Professor Asks: "Why is each key step mathematically valid?"
           </div>
           <div class="content-body" style="font-size:0.92rem;">
             ${formatMarkdown(sec5)}
           </div>
         </div>
 
-        <!-- 3. Key Concepts & Theorems -->
+        <!-- 4. Key Concepts & Theorems -->
         <div class="defense-section-card">
           <div class="defense-section-title">
-            <span>&lightbulb;</span> Underlying Principles & Theorems
+            <span>📖</span> Underlying Principles & Theorems
           </div>
           <div class="content-body" style="font-size:0.92rem;">
             ${formatMarkdown(sec3)}
           </div>
         </div>
 
-        <!-- 4. Traps to Avoid -->
+        <!-- 5. Traps to Avoid -->
         <div class="defense-section-card" style="background:#fffbeb; border-color:#fde68a;">
           <div class="defense-section-title" style="color:#b45309;">
-            <span>&warning;</span> Pitfall Defense: "What typical mistake must be avoided here?"
+            <span>⚠️</span> Pitfall Defense: "What typical mistake must be avoided here?"
           </div>
           <div class="content-body" style="font-size:0.92rem; color:#92400e;">
             ${formatMarkdown(sec8)}
           </div>
         </div>
+
+        <!-- 6. Full Interactive Mathematics Glossary -->
+        <div class="defense-section-card" style="background:#f8fafc; border-color:var(--border);">
+          <div class="defense-section-title">
+            <span>📚</span> Complete Mathematics Glossary (120+ Terim Arama)
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">
+            Aklına takılan herhangi bir İngilizce veya Türkçe matematik terimini arayabilirsin:
+          </p>
+          <input type="text" class="glossary-search-input" id="glossarySearchInput" placeholder="Terim ara (örn. eigenvalue, determinant, rank, inflection, türev, integral)...">
+          <div class="vocab-grid" id="fullGlossaryGrid" style="max-height:260px; overflow-y:auto; padding-right:4px;">
+            <!-- Filtered on user typing -->
+          </div>
+        </div>
       `;
 
-      renderMath(body);
+      // Initialize Glossary Search inside Modal
+      setupGlossarySearch();
+
+      renderMathFallback(body);
       document.getElementById('defenseModalBackdrop').classList.add('active');
+    }
+
+    function setupGlossarySearch() {
+      const input = document.getElementById('glossarySearchInput');
+      const grid = document.getElementById('fullGlossaryGrid');
+      if (!input || !grid) return;
+
+      function renderGlossary(filtered) {
+        grid.innerHTML = filtered.map(v => `
+          <div class="vocab-item">
+            <div class="vocab-term-row">
+              <span class="vocab-en">${v.term}</span>
+              <span class="vocab-tr-badge">${v.tr}</span>
+            </div>
+            <div class="vocab-def">${v.def}</div>
+          </div>
+        `).join('');
+      }
+
+      // Initial top 12 items
+      renderGlossary(MATH_DICTIONARY.slice(0, 12));
+
+      input.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        if (!query) {
+          renderGlossary(MATH_DICTIONARY.slice(0, 12));
+          return;
+        }
+        const filtered = MATH_DICTIONARY.filter(item => 
+          item.term.toLowerCase().includes(query) ||
+          item.tr.toLowerCase().includes(query) ||
+          item.def.toLowerCase().includes(query)
+        );
+        renderGlossary(filtered);
+      });
     }
 
     function closeOralDefenseModal() {
@@ -1964,7 +2349,7 @@
       }
     });
 
-    // Boot
+    // Boot Application
     window.addEventListener('DOMContentLoaded', initApp);
   </script>
 </body>
